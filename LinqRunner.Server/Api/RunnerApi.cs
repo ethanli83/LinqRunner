@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using LinqRunner.Server.DataModel;
 using Nancy;
 
@@ -15,7 +16,18 @@ namespace LinqRunner.Server.Api
         // GET api/values
         public async Task<object> Execute(LinqRunner linqRunner, string linq)
         {
-            return await linqRunner.RunAsync(linq, new NorthwindContext(), NorthwindContext.ConnectionString);
+            try 
+            {
+                using (var db =  new NorthwindContext())
+                {
+                    return await linqRunner.RunAsync(linq, db, NorthwindContext.ConnectionString);
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+                throw e;
+            }
         }
     }
 }

@@ -2639,10 +2639,11 @@ webpackJsonp([0],{
 	            return React.createElement("tr", { key: ri }, items);
 	        });
 	        var style = Object.assign({ overflow: 'auto' }, this.props.style);
-	        return (React.createElement("table", { style: style, className: this.props.className + ' ' + 'result-table' },
-	            React.createElement("thead", null,
-	                React.createElement("tr", null, heads)),
-	            React.createElement("tbody", null, rows)));
+	        return (React.createElement("div", { style: style, className: this.props.className },
+	            React.createElement("table", { style: { width: '100%', height: 'auto' }, className: 'result-table' },
+	                React.createElement("thead", null,
+	                    React.createElement("tr", null, heads)),
+	                React.createElement("tbody", null, rows))));
 	    }
 	}
 	exports.QueryResult = QueryResult;

@@ -32,10 +32,11 @@ export class QueryResult extends React.Component<QueryResultProps, any>
             });
 
         var style = Object.assign({ overflow: 'auto' }, this.props.style);
-        return (
-            <table style={style} className={this.props.className + ' ' + 'result-table'}>
+        return (<div style={style} className={this.props.className}>
+            <table style={{ width: '100%', height: 'auto' }} className={'result-table'}>
                 <thead><tr>{heads}</tr></thead>
                 <tbody>{rows}</tbody>
-            </table>);
+            </table>
+        </div>);
     }
 }

@@ -1,5 +1,11 @@
 version: "2"
 services:
+    web:
+        image: "daydreamerio/linqrunner"
+        ports:
+            - "5000:5000"
+        links:
+            - mysql
     mysql:
         image: "mysql:8.0"
         container_name: northwind-mysql

@@ -20,7 +20,7 @@ namespace LinqRunner.Server.Api
             _scriptOptions = ScriptOptions.Default;
 
             //Add reference to mscorlib
-            var mscorlib = typeof(System.Object).GetTypeInfo().Assembly;
+            var mscorlib = typeof(object).GetTypeInfo().Assembly;
             var linqlib = typeof(Queryable).GetTypeInfo().Assembly;
             var dapperlib = typeof(Dapper.CommandDefinition).GetTypeInfo().Assembly;
             var extlib = typeof(DbContextExtensions).GetTypeInfo().Assembly;

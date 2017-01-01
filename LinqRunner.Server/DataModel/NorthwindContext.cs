@@ -15,8 +15,8 @@ namespace LinqRunner.Server.DataModel
         {
             _config = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appSettings.json")
-                .Build();
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true).
+                Build();
             
             ConnectionString = _config.GetConnectionString("NorthwindMySqlConn");
         }
