@@ -1,0 +1,44 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.dracula {
+  background-color: #282a36;
+  color: #f8f8f2;
+}
+
+div.CodeMirror {
+  height: 100%;
+  width: 100%;
+}
+
+.container-style {
+    width: 100%;
+    height: 100%;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+.row-style {
+    width: 100%;
+    height: 50%;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+.col-style {
+    float: left;
+    width: 50%;
+    height: 100%;
+    margin: 0 0 0 0;
+    padding: 5px;
+}
+
+.full-col-style {
+    float: right;
+    width: 100%;
+    height: 100%;
+    margin: 0 0 0 0;
+    padding: 5px;
+}

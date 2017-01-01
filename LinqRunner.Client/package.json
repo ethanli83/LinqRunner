@@ -1,0 +1,31 @@
+{
+  "name": "wwwroot",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.5",
+    "codemirror": "^5.22.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "superagent": "^3.3.1"
+  },
+  "devDependencies": {
+    "@types/codemirror": "0.0.35",
+    "@types/react": "^0.14.55",
+    "@types/react-dom": "^0.14.19",
+    "@types/superagent": "^2.0.36",
+    "awesome-typescript-loader": "2.2.4",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.26.1",
+    "source-map-loader": "^0.1.5",
+    "style-loader": "^0.13.1",
+    "typescript": "2.1.1",
+    "webpack": "^1.14.0"
+  }
+}

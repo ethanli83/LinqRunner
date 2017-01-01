@@ -1,0 +1,13 @@
+version: "2"
+services:
+    mysql:
+        image: "mysql:8.0"
+        container_name: northwind-mysql
+        expose:
+            - "3306"
+        ports:
+            - "3306:3306"
+        environment:
+            - MYSQL_ROOT_PASSWORD=chenli1234
+        volumes:
+            - ./initdb/:/docker-entrypoint-initdb.d/:ro

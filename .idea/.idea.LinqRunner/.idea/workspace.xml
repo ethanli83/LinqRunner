@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="aa1c7066-3100-4940-9580-ddf812082065" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Program.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/LinqRunner.Server/Program.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+              <folding>
+                <marker date="1483250950000" expanded="true" signature="6:52" ph="..." />
+                <marker date="1483250950000" expanded="true" signature="81:455" ph="{...}" />
+                <marker date="1483250950000" expanded="true" signature="108:453" ph="{...}" />
+                <marker date="1483250950000" expanded="true" signature="161:447" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Startup.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LinqRunner.Server/Startup.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-86">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1483250950000" expanded="true" signature="6:215" ph="..." />
+                <marker date="1483250950000" expanded="true" signature="244:1738" ph="{...}" />
+                <marker date="1483250950000" expanded="true" signature="271:1736" ph="{...}" />
+                <marker date="1483250950000" expanded="true" signature="325:815" ph="{...}" />
+                <marker date="1483250950000" expanded="true" signature="665:712" ph="{...}" />
+                <marker date="1483250950000" expanded="true" signature="1041:1206" ph="{...}" />
+                <marker date="1483250950000" expanded="true" signature="1064:1196" ph="/* Add framework services. ... */" />
+                <marker date="1483250950000" expanded="true" signature="1423:1730" ph="{...}" />
+                <marker date="1483250950000" expanded="true" signature="1549:1629" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.config" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LinqRunner.Server/web.config">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RunnerApi.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LinqRunner.Server/Api/RunnerApi.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
+              <folding>
+                <marker date="1483251008000" expanded="true" signature="0:77" ph="..." />
+                <marker date="1483251008000" expanded="true" signature="6:77" ph="..." />
+                <marker date="1483251008000" expanded="true" signature="110:624" ph="{...}" />
+                <marker date="1483251008000" expanded="true" signature="160:622" ph="{...}" />
+                <marker date="1483251008000" expanded="true" signature="234:380" ph="{...}" />
+                <marker date="1483251008000" expanded="true" signature="485:616" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LinqRunner.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LinqRunner.Server/Api/LinqRunner.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="58" column="16" lean-forward="false" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
+              <folding>
+                <marker date="1483251320000" expanded="true" signature="6:283" ph="..." />
+                <marker date="1483251320000" expanded="true" signature="316:3174" ph="{...}" />
+                <marker date="1483251320000" expanded="true" signature="346:3172" ph="{...}" />
+                <marker date="1483251320000" expanded="true" signature="493:1311" ph="{...}" />
+                <marker date="1483251320000" expanded="true" signature="1414:1880" ph="{...}" />
+                <marker date="1483251320000" expanded="true" signature="1964:2980" ph="{...}" />
+                <marker date="1483251320000" expanded="true" signature="2158:2970" ph="{...}" />
+                <marker date="1483251320000" expanded="true" signature="3022:3166" ph="{...}" />
+                <marker date="1483251320000" expanded="true" signature="3100:3156" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DbContextExtensions.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LinqRunner.Server/Api/DbContextExtensions.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1483251025000" expanded="true" signature="6:270" ph="..." />
+                <marker date="1483251025000" expanded="true" signature="303:1200" ph="{...}" />
+                <marker date="1483251025000" expanded="true" signature="349:1198" ph="{...}" />
+                <marker date="1483251025000" expanded="true" signature="473:1192" ph="{...}" />
+                <marker date="1483251025000" expanded="true" signature="549:1182" ph="{...}" />
+                <marker date="1483251025000" expanded="true" signature="583:932" ph="{...}" />
+                <marker date="1483251025000" expanded="true" signature="968:1168" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="appsettings.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LinqRunner.Server/appsettings.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding>
+                <marker date="1482565763000" expanded="true" signature="0:321" ph="{...}" />
+                <marker date="1482565763000" expanded="true" signature="15:168" ph="{...}" />
+                <marker date="1482565763000" expanded="true" signature="61:164" ph="{...}" />
+                <marker date="1482565763000" expanded="true" signature="197:319" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="project.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LinqRunner.Server/project.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-15">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1483250141000" expanded="true" signature="0:2195" ph="{...}" />
+                <marker date="1483250141000" expanded="true" signature="22:1431" ph="{...}" />
+                <marker date="1483250141000" expanded="true" signature="57:131" ph="{...}" />
+                <marker date="1483250141000" expanded="true" signature="1447:1537" ph="{...}" />
+                <marker date="1483250141000" expanded="true" signature="1558:1695" ph="{...}" />
+                <marker date="1483250141000" expanded="true" signature="1585:1689" ph="{...}" />
+                <marker date="1483250141000" expanded="true" signature="1610:1679" ph="[...]" />
+                <marker date="1483250141000" expanded="true" signature="1718:1800" ph="{...}" />
+                <marker date="1483250141000" expanded="true" signature="1825:1909" ph="{...}" />
+                <marker date="1483250141000" expanded="true" signature="1855:1903" ph="{...}" />
+                <marker date="1483250141000" expanded="true" signature="1934:2020" ph="{...}" />
+                <marker date="1483250141000" expanded="true" signature="1955:2014" ph="[...]" />
+                <marker date="1483250141000" expanded="true" signature="2063:2187" ph="[...]" />
+                <marker date="1483250141000" expanded="true" signature="2190:2194" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/LinqRunner.Server/project.json" />
+        <option value="$PROJECT_DIR$/LinqRunner.Server/Startup.cs" />
+        <option value="$PROJECT_DIR$/LinqRunner.Server/Api/QueryModule.cs" />
+        <option value="$PROJECT_DIR$/LinqRunner.Server/Api/LinqQueryApi.cs" />
+        <option value="$PROJECT_DIR$/LinqRunner.Server/Api/RunnerApi.cs" />
+        <option value="$PROJECT_DIR$/LinqRunner.Server/Api/LinqRunner.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1280" />
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="1417" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="SolutionExplorer">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinqRunner (1 project)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinqRunner.Server" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinqRunner (1 project)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinqRunner.Server" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wwwroot" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinqRunner (1 project)" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LinqRunner.Server" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Api" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="RunManager" selected=".NET Project.Default">
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="DotNetProject" factoryName=".NET Project">
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/LinqRunner.Server/LinqRunner.Server.xproj" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value=".NETCoreApp,Version=v1.1" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/LinqRunner.Server/bin/Debug/netcoreapp1.1/LinqRunner.Server.dll" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/LinqRunner.Server" />
+      <option name="USE_MONO" value="0" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <envs>
+        <env name="ASPNETCORE_ENVIRONMENT" value="Development" />
+        <env name="ASPNETCORE_URLS" value="http://localhost:5000" />
+      </envs>
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue=".NET Project.Default" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aa1c7066-3100-4940-9580-ddf812082065" name="Default" comment="" />
+      <created>1483246990528</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1483246990528</updated>
+      <workItem from="1483246991736" duration="309000" />
+      <workItem from="1483247323048" duration="938000" />
+      <workItem from="1483250096233" duration="83000" />
+      <workItem from="1483250506020" duration="41000" />
+      <workItem from="1483250826112" duration="1506000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2877000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1280" y="23" width="1280" height="1417" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors in solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39939713" sideWeight="0.50646204" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UnitTesting" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32931423" sideWeight="0.49676898" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32931423" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23505655" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39939713" sideWeight="0.49353796" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/LinqRunner.Server/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1483250950000" expanded="true" signature="6:52" ph="..." />
+            <marker date="1483250950000" expanded="true" signature="81:455" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="108:453" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="161:447" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinqRunner.Server/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1483250950000" expanded="true" signature="6:215" ph="..." />
+            <marker date="1483250950000" expanded="true" signature="244:1738" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="271:1736" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="325:815" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="665:712" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="1041:1206" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="1064:1196" ph="/* Add framework services. ... */" />
+            <marker date="1483250950000" expanded="true" signature="1423:1730" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="1549:1629" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinqRunner.Server/project.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="23" lean-forward="false" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+          <folding>
+            <marker date="1483250141000" expanded="true" signature="0:2195" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="22:1431" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="57:131" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1447:1537" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1558:1695" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1585:1689" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1610:1679" ph="[...]" />
+            <marker date="1483250141000" expanded="true" signature="1718:1800" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1825:1909" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1855:1903" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1934:2020" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1955:2014" ph="[...]" />
+            <marker date="1483250141000" expanded="true" signature="2063:2187" ph="[...]" />
+            <marker date="1483250141000" expanded="true" signature="2190:2194" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinqRunner.Server/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1483250950000" expanded="true" signature="6:52" ph="..." />
+            <marker date="1483250950000" expanded="true" signature="81:455" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="108:453" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="161:447" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinqRunner.Server/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1483250950000" expanded="true" signature="6:215" ph="..." />
+            <marker date="1483250950000" expanded="true" signature="244:1738" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="271:1736" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="325:815" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="665:712" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="1041:1206" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="1064:1196" ph="/* Add framework services. ... */" />
+            <marker date="1483250950000" expanded="true" signature="1423:1730" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="1549:1629" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinqRunner.Server/project.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="23" lean-forward="false" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+          <folding>
+            <marker date="1483250141000" expanded="true" signature="0:2195" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="22:1431" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="57:131" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1447:1537" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1558:1695" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1585:1689" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1610:1679" ph="[...]" />
+            <marker date="1483250141000" expanded="true" signature="1718:1800" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1825:1909" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1855:1903" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1934:2020" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1955:2014" ph="[...]" />
+            <marker date="1483250141000" expanded="true" signature="2063:2187" ph="[...]" />
+            <marker date="1483250141000" expanded="true" signature="2190:2194" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinqRunner.Server/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="9" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+          <folding>
+            <marker date="1483250950000" expanded="true" signature="6:52" ph="..." />
+            <marker date="1483250950000" expanded="true" signature="81:455" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="108:453" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="161:447" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinqRunner.Server/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding>
+            <marker date="1483250950000" expanded="true" signature="6:215" ph="..." />
+            <marker date="1483250950000" expanded="true" signature="244:1738" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="271:1736" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="325:815" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="665:712" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="1041:1206" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="1064:1196" ph="/* Add framework services. ... */" />
+            <marker date="1483250950000" expanded="true" signature="1423:1730" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="1549:1629" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinqRunner.Server/project.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1483250141000" expanded="true" signature="0:2195" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="22:1431" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="57:131" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1447:1537" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1558:1695" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1585:1689" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1610:1679" ph="[...]" />
+            <marker date="1483250141000" expanded="true" signature="1718:1800" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1825:1909" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1855:1903" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1934:2020" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1955:2014" ph="[...]" />
+            <marker date="1483250141000" expanded="true" signature="2063:2187" ph="[...]" />
+            <marker date="1483250141000" expanded="true" signature="2190:2194" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinqRunner.Server/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="9" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+          <folding>
+            <marker date="1483250950000" expanded="true" signature="6:52" ph="..." />
+            <marker date="1483250950000" expanded="true" signature="81:455" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="108:453" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="161:447" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinqRunner.Server/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding>
+            <marker date="1483250950000" expanded="true" signature="6:215" ph="..." />
+            <marker date="1483250950000" expanded="true" signature="244:1738" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="271:1736" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="325:815" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="665:712" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="1041:1206" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="1064:1196" ph="/* Add framework services. ... */" />
+            <marker date="1483250950000" expanded="true" signature="1423:1730" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="1549:1629" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinqRunner.Server/project.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1483250141000" expanded="true" signature="0:2195" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="22:1431" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="57:131" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1447:1537" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1558:1695" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1585:1689" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1610:1679" ph="[...]" />
+            <marker date="1483250141000" expanded="true" signature="1718:1800" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1825:1909" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1855:1903" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1934:2020" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1955:2014" ph="[...]" />
+            <marker date="1483250141000" expanded="true" signature="2063:2187" ph="[...]" />
+            <marker date="1483250141000" expanded="true" signature="2190:2194" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinqRunner.Server/Api/RunnerApi.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
+          <folding>
+            <marker date="1483251008000" expanded="true" signature="0:77" ph="..." />
+            <marker date="1483251008000" expanded="true" signature="6:77" ph="..." />
+            <marker date="1483251008000" expanded="true" signature="110:624" ph="{...}" />
+            <marker date="1483251008000" expanded="true" signature="160:622" ph="{...}" />
+            <marker date="1483251008000" expanded="true" signature="234:380" ph="{...}" />
+            <marker date="1483251008000" expanded="true" signature="485:616" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinqRunner.Server/Api/DbContextExtensions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1483251025000" expanded="true" signature="6:270" ph="..." />
+            <marker date="1483251025000" expanded="true" signature="303:1200" ph="{...}" />
+            <marker date="1483251025000" expanded="true" signature="349:1198" ph="{...}" />
+            <marker date="1483251025000" expanded="true" signature="473:1192" ph="{...}" />
+            <marker date="1483251025000" expanded="true" signature="549:1182" ph="{...}" />
+            <marker date="1483251025000" expanded="true" signature="583:932" ph="{...}" />
+            <marker date="1483251025000" expanded="true" signature="968:1168" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinqRunner.Server/Api/LinqRunner.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="58" column="16" lean-forward="false" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
+          <folding>
+            <marker date="1483251320000" expanded="true" signature="6:283" ph="..." />
+            <marker date="1483251320000" expanded="true" signature="316:3174" ph="{...}" />
+            <marker date="1483251320000" expanded="true" signature="346:3172" ph="{...}" />
+            <marker date="1483251320000" expanded="true" signature="493:1311" ph="{...}" />
+            <marker date="1483251320000" expanded="true" signature="1414:1880" ph="{...}" />
+            <marker date="1483251320000" expanded="true" signature="1964:2980" ph="{...}" />
+            <marker date="1483251320000" expanded="true" signature="2158:2970" ph="{...}" />
+            <marker date="1483251320000" expanded="true" signature="3022:3166" ph="{...}" />
+            <marker date="1483251320000" expanded="true" signature="3100:3156" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinqRunner.Server/project.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1483250141000" expanded="true" signature="0:2195" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="22:1431" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="57:131" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1447:1537" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1558:1695" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1585:1689" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1610:1679" ph="[...]" />
+            <marker date="1483250141000" expanded="true" signature="1718:1800" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1825:1909" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1855:1903" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1934:2020" ph="{...}" />
+            <marker date="1483250141000" expanded="true" signature="1955:2014" ph="[...]" />
+            <marker date="1483250141000" expanded="true" signature="2063:2187" ph="[...]" />
+            <marker date="1483250141000" expanded="true" signature="2190:2194" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinqRunner.Server/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-86">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1483250950000" expanded="true" signature="6:215" ph="..." />
+            <marker date="1483250950000" expanded="true" signature="244:1738" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="271:1736" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="325:815" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="665:712" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="1041:1206" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="1064:1196" ph="/* Add framework services. ... */" />
+            <marker date="1483250950000" expanded="true" signature="1423:1730" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="1549:1629" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinqRunner.Server/web.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinqRunner.Server/appsettings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <marker date="1482565763000" expanded="true" signature="0:321" ph="{...}" />
+            <marker date="1482565763000" expanded="true" signature="15:168" ph="{...}" />
+            <marker date="1482565763000" expanded="true" signature="61:164" ph="{...}" />
+            <marker date="1482565763000" expanded="true" signature="197:319" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinqRunner.Server/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding>
+            <marker date="1483250950000" expanded="true" signature="6:52" ph="..." />
+            <marker date="1483250950000" expanded="true" signature="81:455" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="108:453" ph="{...}" />
+            <marker date="1483250950000" expanded="true" signature="161:447" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
