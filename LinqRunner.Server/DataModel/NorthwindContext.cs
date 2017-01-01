@@ -1,24 +1,15 @@
-﻿using System.IO;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.Extensions.Configuration;
 
 namespace LinqRunner.Server.DataModel
 {
     public partial class NorthwindContext : DbContext
     {
-        public static readonly string ConnectionString;
+        private readonly string _connectionString;
 
-        private static readonly IConfigurationRoot _config;
-
-        static NorthwindContext()
+        public NorthwindContext(string connectionString)
         {
-            _config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true).
-                Build();
-            
-            ConnectionString = _config.GetConnectionString("NorthwindMySqlConn");
+            _connectionString = connectionString + "database=northwind;";
         }
 
         public virtual DbSet<Categories> Categories { get; set; }
@@ -37,7 +28,7 @@ namespace LinqRunner.Server.DataModel
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql(ConnectionString);
+            optionsBuilder.UseMySql(_connectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

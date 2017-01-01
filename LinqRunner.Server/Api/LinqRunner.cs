@@ -34,12 +34,12 @@ namespace LinqRunner.Server.Api
             _scriptOptions = _scriptOptions.AddImports("Dapper");
         }
 
-        public async Task<dynamic> RunAsync<T>(string linq, T db, string connStr) where T : DbContext
+        public async Task<dynamic> RunAsync<T>(string linq, T db) where T : DbContext
         {
             var query = CompileQuery<T>(linq);
 
             var script = query.ContinueWith("string sql;");
-            script = script.ContinueWith($"var result = DbContextExtensions.Query(Db, (IQueryable)query, \"{connStr}\", out sql);");
+            script = script.ContinueWith($"var result = DbContextExtensions.Query(Db, (IQueryable)query, out sql);");
             script = script.ContinueWith("return new { sql = sql, result = result };");
 
             var result = await script.RunAsync(new LinqRunnerGlobal<T>(db));

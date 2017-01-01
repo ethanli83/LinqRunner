@@ -12,9 +12,9 @@ namespace LinqRunner.Server.Api
 {
     public static class DbContextExtensions
     {
-        public static IEnumerable<dynamic> Query(this DbContext db, IQueryable query, string connStr, out string sql)
+        public static IEnumerable<dynamic> Query(this DbContext db, IQueryable query, out string sql)
         {
-            using (var connection = new MySqlConnection(connStr))
+            using (var connection = db.Database.GetDbConnection())
             {
                 try
                 {

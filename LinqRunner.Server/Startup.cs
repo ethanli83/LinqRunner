@@ -33,6 +33,7 @@ namespace LinqRunner.Server
             // Add framework services.
             // services.AddApplicationInsightsTelemetry(Configuration);
             // services.AddMvc();
+            services.AddSingleton(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
@@ -46,8 +47,14 @@ namespace LinqRunner.Server
                 // app.UseDeveloperExceptionPage();
             }
 
-            app.UseStaticFiles();            
-            app.UseOwin(x => x.UseNancy());
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+
+            var config = this.Configuration;
+            var appConfig = new AppConfiguration();
+            config.Bind(appConfig);
+
+            app.UseOwin(x => x.UseNancy(n => n.Bootstrapper = new Bootstrapper(appConfig)));
         }
     }
 }
