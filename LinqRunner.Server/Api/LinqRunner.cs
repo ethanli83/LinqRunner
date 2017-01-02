@@ -69,15 +69,5 @@ namespace LinqRunner.Server.Api
                     $"var query = {linq};", scriptOptions, typeof(LinqRunnerGlobal<T>), interactiveLoader);
             }
         }
-
-        public class LinqRunnerGlobal<T>
-        {
-            public T Db;
-
-            public LinqRunnerGlobal(T db)
-            {   
-                Db = db;
-            }
-        }
     }
 }

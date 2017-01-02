@@ -1,8 +1,6 @@
 ﻿using System;
-using System.IO;
 using System.Threading.Tasks;
 using LinqRunner.Server.DataModel;
-using Microsoft.Extensions.Configuration;
 using Nancy;
 
 namespace LinqRunner.Server.Api
@@ -11,16 +9,21 @@ namespace LinqRunner.Server.Api
     {
         private readonly AppConfiguration _appConfig;
 
-        public RunnerApi(LinqRunner linqRunner, AppConfiguration config) : base("api/query")
+        public RunnerApi(LinqRunner linqRunner, LinqCompleter linqCompleter, AppConfiguration config) :
+            base("api/query")
         {
             _appConfig = config;
 
             Get("/", args => "ok");
-            Get("/db", async args => await Execute(linqRunner, this.Request.Query.linq));
+
+            Get("/db", async args =>
+                await RunLinq(linqRunner, Request.Query.linq));
+
+            Get("/autocomplete", async args =>
+                await GetLinqCompletions(linqCompleter, Request.Query.linq, Request.Query.start, Request.Query.end));
         }
 
-        // GET api/values
-        public async Task<object> Execute(LinqRunner linqRunner, string linq)
+        private async Task<object> RunLinq(LinqRunner linqRunner, string linq)
         {
             try
             {
@@ -33,7 +36,20 @@ namespace LinqRunner.Server.Api
             catch(Exception e)
             {
                 Console.WriteLine(e);
-                throw e;
+                throw;
+            }
+        }
+
+        private static async Task<object> GetLinqCompletions(LinqCompleter linqCompleter, string linq, int start, int end)
+        {
+            try
+            {
+                return await linqCompleter.GetSuggestions<NorthwindContext>(linq, start, end);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
             }
         }
     }

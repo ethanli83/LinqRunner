@@ -16,6 +16,7 @@ namespace LinqRunner.Server
         protected override void ConfigureApplicationContainer(ILifetimeScope container)
         {
             container.Update(builder => builder.RegisterType<Api.LinqRunner>().SingleInstance());
+            container.Update(builder => builder.RegisterType<Api.LinqCompleter>().SingleInstance());
             container.Update(builder => builder.RegisterInstance(_appConfig));
         }
 

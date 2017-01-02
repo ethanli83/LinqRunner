@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { findDOMNode } from 'react-dom';
-
 import * as CodeMirror from 'codemirror';
+import * as superagent from 'superagent';
 
 import '!style!css!codemirror/lib/codemirror.css';
 import '!style!css!codemirror/addon/hint/show-hint.css';
@@ -28,15 +27,33 @@ export class CodeEditor extends React.Component<CodeEditorProps, any>
     }
 
     componentDidMount () {
-        var gs = {
-            types: {
-                network: {},
-                tier: {
-                    web: {},
-                    database: {}
-                },
-                host: {}
-            }
+        var CM = CodeMirror as any;
+
+        CM.registerHelper(
+            "hint", "roslyn",
+            function (mirror: any, callback: any, options: any) {
+                var cur = mirror.getCursor();
+                var tok = mirror.getTokenAt(cur);
+
+                console.log(cur, tok);
+                superagent
+                    .get('/api/query/autocomplete')
+                    .query({ linq: mirror.getValue(), start: tok.start, end: tok.end })
+                    .set('Accept', 'application/json')
+                    .end(function (err, res) {
+                        if (err) {
+                            return;
+                        }
+
+                        callback({ list: res.body,
+                            from: CodeMirror.Pos(cur.line, tok.string === '.' ? tok.start + 1 : tok.start),
+                            to: CodeMirror.Pos(cur.line, tok.end)
+                        });
+                    });
+            });
+
+        CM.commands.autocomplete = function (cm: any) {
+            CM.showHint(cm, CM.hint.roslyn, { async: true });
         };
 
         const options = {
@@ -47,22 +64,22 @@ export class CodeEditor extends React.Component<CodeEditorProps, any>
             matchBrackets: true,
             indentUnit: 4,
             completeSingle: false,
-            hint: (CodeMirror as any).hint.sql,
+            hint: CM.hint.roslyn,
             extraKeys: {
-                "Cmd-Space": "autocomplete",
-                "Ctrl-Space": "autocomplete"
+                'Cmd-Space': 'autocomplete',
+                'Ctrl-Space': 'autocomplete'
             },
             hintOptions: {
                 tables: {
-                    "table1": [ "col_A", "col_B", "col_C" ],
-                    "table2": [ "other_columns1", "other_columns2" ]
+                    'table1': [ 'col_A', 'col_B', 'col_C' ],
+                    'table2': [ 'other_columns1', 'other_columns2' ]
                 }
             }
         };
 
 		this._editor = CodeMirror(this._editorElement, options);
 
-        this._editor.on("change", (editor: CodeMirror.Editor, change: CodeMirror.EditorChange) => {
+        this._editor.on('change', (editor: CodeMirror.Editor, change: CodeMirror.EditorChange) => {
             this.props.OnCodeChange(editor.getValue());
         });
     }

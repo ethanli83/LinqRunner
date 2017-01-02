@@ -1747,6 +1747,7 @@ webpackJsonp([0],{
 	"use strict";
 	const React = __webpack_require__(1);
 	const CodeMirror = __webpack_require__(192);
+	const superagent = __webpack_require__(178);
 	__webpack_require__(198);
 	__webpack_require__(200);
 	__webpack_require__(202);
@@ -1756,15 +1757,27 @@ webpackJsonp([0],{
 	        super(props);
 	    }
 	    componentDidMount() {
-	        var gs = {
-	            types: {
-	                network: {},
-	                tier: {
-	                    web: {},
-	                    database: {}
-	                },
-	                host: {}
-	            }
+	        var CM = CodeMirror;
+	        CM.registerHelper("hint", "roslyn", function (mirror, callback, options) {
+	            var cur = mirror.getCursor();
+	            var tok = mirror.getTokenAt(cur);
+	            console.log(cur, tok);
+	            superagent
+	                .get('/api/query/autocomplete')
+	                .query({ linq: mirror.getValue(), start: tok.start, end: tok.end })
+	                .set('Accept', 'application/json')
+	                .end(function (err, res) {
+	                if (err) {
+	                    return;
+	                }
+	                callback({ list: res.body,
+	                    from: CodeMirror.Pos(cur.line, tok.string === '.' ? tok.start + 1 : tok.start),
+	                    to: CodeMirror.Pos(cur.line, tok.end)
+	                });
+	            });
+	        });
+	        CM.commands.autocomplete = function (cm) {
+	            CM.showHint(cm, CM.hint.roslyn, { async: true });
 	        };
 	        const options = {
 	            mode: this.props.Mode,
@@ -1774,20 +1787,20 @@ webpackJsonp([0],{
 	            matchBrackets: true,
 	            indentUnit: 4,
 	            completeSingle: false,
-	            hint: CodeMirror.hint.sql,
+	            hint: CM.hint.roslyn,
 	            extraKeys: {
-	                "Cmd-Space": "autocomplete",
-	                "Ctrl-Space": "autocomplete"
+	                'Cmd-Space': 'autocomplete',
+	                'Ctrl-Space': 'autocomplete'
 	            },
 	            hintOptions: {
 	                tables: {
-	                    "table1": ["col_A", "col_B", "col_C"],
-	                    "table2": ["other_columns1", "other_columns2"]
+	                    'table1': ['col_A', 'col_B', 'col_C'],
+	                    'table2': ['other_columns1', 'other_columns2']
 	                }
 	            }
 	        };
 	        this._editor = CodeMirror(this._editorElement, options);
-	        this._editor.on("change", (editor, change) => {
+	        this._editor.on('change', (editor, change) => {
 	            this.props.OnCodeChange(editor.getValue());
 	        });
 	    }
