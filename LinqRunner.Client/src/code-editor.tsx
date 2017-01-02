@@ -38,7 +38,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, any>
                 console.log(cur, tok);
                 superagent
                     .get('/api/query/autocomplete')
-                    .query({ linq: mirror.getValue(), start: tok.start, end: tok.end })
+                    .query({ linq: mirror.getValue(), start: tok.start, end: tok.end, line: cur.line })
                     .set('Accept', 'application/json')
                     .end(function (err, res) {
                         if (err) {

@@ -10,6 +10,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Scripting;
 using Microsoft.CodeAnalysis.Scripting.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using TypeInfo = Microsoft.CodeAnalysis.TypeInfo;
 
 namespace LinqRunner.Server.Api
@@ -27,21 +28,32 @@ namespace LinqRunner.Server.Api
             //Add reference to mscorlib
             var linqlib = typeof(Queryable).GetTypeInfo().Assembly;
 
-            _defaultReferences = new [] { linqlib };
+            _defaultReferences = new[] {linqlib};
 
             //Add namespaces
             _scriptOptions = _scriptOptions.AddImports("System.Linq");
         }
 
-        public async Task<List<Completion>> GetSuggestions<T>(string linq, int start, int end) where T : DbContext
+        public async Task<List<Completion>> GetSuggestions<T>(
+            string linq, int start, int end, int lineNum) where T : DbContext
         {
             if (string.IsNullOrEmpty(linq) || linq.Length < 2)
-                return new List<Completion> { new Completion { Text = "Db", DisplayText = "Db" } };
+                return new List<Completion> {new Completion {Text = "Db", DisplayText = "Db"}};
 
-            var partialTok = linq.Substring(start, end - start);
+            var lines = linq.Split("\n".ToCharArray(), StringSplitOptions.None);
+            var line = lines[lineNum];
+
+            var partialTok = line.Substring(start, end - start);
             partialTok = partialTok == "." ? "" : partialTok;
 
-            linq = linq.Insert(start, " ");
+            lines[lineNum] = line.Insert(start, " ");
+            linq = lines.Join("\n");
+
+            if (lineNum > 0)
+            {
+                var num = lines.Take(lineNum).Sum(l => l.Length);
+                start += num;
+            }
 
             var dbType = typeof(T);
             var dbModel = typeof(T).GetTypeInfo().Assembly;
@@ -74,7 +86,9 @@ namespace LinqRunner.Server.Api
             var res = new List<Completion>();
             foreach (var symbol in symbols)
             {
-                if (!symbol.ContainingAssembly.Name.StartsWith("System.Linq") &&
+                if (symbol?.ContainingAssembly?.Name != null &&
+                    !symbol.ContainingAssembly.Name.StartsWith("System.Linq") &&
+                    symbol?.ContainingNamespace?.Name != null &&
                     symbol.ContainingAssembly.Name + "." + symbol.ContainingNamespace.Name != dbType.Namespace)
                     continue;
 

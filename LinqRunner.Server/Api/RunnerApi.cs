@@ -20,7 +20,8 @@ namespace LinqRunner.Server.Api
                 await RunLinq(linqRunner, Request.Query.linq));
 
             Get("/autocomplete", async args =>
-                await GetLinqCompletions(linqCompleter, Request.Query.linq, Request.Query.start, Request.Query.end));
+                await GetLinqCompletions(
+                    linqCompleter, Request.Query.linq, Request.Query.start, Request.Query.end, Request.Query.line));
         }
 
         private async Task<object> RunLinq(LinqRunner linqRunner, string linq)
@@ -40,11 +41,12 @@ namespace LinqRunner.Server.Api
             }
         }
 
-        private static async Task<object> GetLinqCompletions(LinqCompleter linqCompleter, string linq, int start, int end)
+        private static async Task<object> GetLinqCompletions(
+            LinqCompleter linqCompleter, string linq, int start, int end, int line)
         {
             try
             {
-                return await linqCompleter.GetSuggestions<NorthwindContext>(linq, start, end);
+                return await linqCompleter.GetSuggestions<NorthwindContext>(linq, start, end, line);
             }
             catch(Exception e)
             {
