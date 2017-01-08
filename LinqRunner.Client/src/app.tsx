@@ -70,7 +70,8 @@ class App extends React.Component<any, AppState>
         const flexItem: React.CSSProperties = {
             flexGrow: 1,
             width: '100%',
-            height: '100%'
+            height: '100%',
+            minWidth: '400px'
         };
 
         return (
