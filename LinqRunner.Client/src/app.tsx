@@ -75,6 +75,18 @@ class App extends React.Component<any, AppState>
 
         return (
             <div style={flexBox}>
+                <nav>
+                    <div className="nav-wrapper teal lighten-2">
+                        <a href="#" style={{ marginLeft: '7px' }} className="brand-logo">Linq Runner</a>
+                        <ul className="right hide-on-med-and-down">
+                            <li>
+                                <a href="https://github.com/ethanli83/EFSqlTranslator" target="_blank">
+                                    <i style={{ display: 'block' }} className="fa fa-github small"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
                 <div style={flexColumn}>
                     <Panel style={flexItem} Title="Linq">
                         <CodeEditor className="dracula"

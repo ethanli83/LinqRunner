@@ -508,19 +508,19 @@ class Panel extends React.Component {
         super();
     }
     render() {
-        const containerStyle = __assign({}, this.props.style, { display: 'flex', flexFlow: 'column' });
         const codeMirrorStyle = {
             flexGrow: 1,
             flexBasis: 0
         };
         const ButtonStyle = {
-            flexGrow: 0
+            flexGrow: 0,
+            marginBottom: '7px'
         };
-        const style = __assign({}, this.props.style, { display: 'flex', flexFlow: 'column', padding: '7px' });
+        const style = __assign({}, this.props.style, { display: 'flex', flexFlow: 'column', padding: '7px', margin: '7px', borderBottomLeftRadius: '3px', borderBottomRightRadius: '3px', borderTopLeftRadius: '3px', borderTopRightRadius: '3px' });
         var children = React.Children.map(this.props.children, (child) => {
             return React.cloneElement(child, { style: codeMirrorStyle });
         });
-        return (React.createElement("div", { style: style },
+        return (React.createElement("div", { style: style, className: "teal lighten-2 z-depth-3" },
             React.createElement("div", { style: ButtonStyle }, this.props.Title),
             children));
     }
@@ -616,6 +616,14 @@ module.exports = ReactDOM;
 
 "use strict";
 
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
 const React = __webpack_require__(0);
 const buttonStyle = {
     height: '100%'
@@ -634,8 +642,8 @@ class ActionBar extends React.Component {
         this.props.onRunHandler();
     }
     render() {
-        return (React.createElement("div", { style: this.props.style, className: this.props.className },
-            React.createElement("button", { className: "waves-effect waves-teal btn-flat  card-panel teal lighten-2", style: buttonStyle, onClick: e => this.onRun() }, "RUN")));
+        return (React.createElement("div", { style: __assign({}, this.props.style, { padding: '7px' }), className: this.props.className + ' z-depth-1' },
+            React.createElement("button", { className: "waves-effect waves-teal btn-flat teal lighten-2", style: buttonStyle, onClick: e => this.onRun() }, "RUN")));
     }
 }
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -761,6 +769,13 @@ class App extends React.Component {
             minWidth: '400px'
         };
         return (React.createElement("div", { style: flexBox },
+            React.createElement("nav", null,
+                React.createElement("div", { className: "nav-wrapper teal lighten-2" },
+                    React.createElement("a", { href: "#", style: { marginLeft: '7px' }, className: "brand-logo" }, "Linq Runner"),
+                    React.createElement("ul", { className: "right hide-on-med-and-down" },
+                        React.createElement("li", null,
+                            React.createElement("a", { href: "https://github.com/ethanli83/EFSqlTranslator", target: "_blank" },
+                                React.createElement("i", { style: { display: 'block' }, className: "fa fa-github small" })))))),
             React.createElement("div", { style: flexColumn },
                 React.createElement(panel_1.default, { style: flexItem, Title: "Linq" },
                     React.createElement(code_editor_1.default, { className: "dracula", Theme: 'dracula', Mode: 'text/x-csharp', Code: this.state.Query, OnChange: this.onCodeChanged, OnRun: this.run })),

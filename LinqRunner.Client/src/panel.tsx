@@ -14,26 +14,26 @@ export default class Panel extends React.Component<PanelProps, any>
 
     render() 
     {
-        const containerStyle: React.CSSProperties = {
-            ...this.props.style,
-            display: 'flex',
-            flexFlow: 'column'
-        };
-
         const codeMirrorStyle: React.CSSProperties = {
             flexGrow: 1,
             flexBasis: 0
         };
 
         const ButtonStyle: React.CSSProperties = {
-            flexGrow: 0
+            flexGrow: 0,
+            marginBottom: '7px'
         };
 
         const style: React.CSSProperties = {
             ...this.props.style,
             display: 'flex',
             flexFlow: 'column',
-            padding: '7px'
+            padding: '7px',
+            margin: '7px',
+            borderBottomLeftRadius: '3px',
+            borderBottomRightRadius: '3px',
+            borderTopLeftRadius: '3px',
+            borderTopRightRadius: '3px'
         }
 
         var children = React.Children.map(this.props.children, (child: React.ReactElement<any>) => {
@@ -41,7 +41,7 @@ export default class Panel extends React.Component<PanelProps, any>
         });
 
         return (
-            <div style={style}>
+            <div style={style} className="teal lighten-2 z-depth-3">
                 <div style={ButtonStyle}>
                     {this.props.Title}
                 </div>

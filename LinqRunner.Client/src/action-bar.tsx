@@ -36,8 +36,8 @@ export default class ActionBar extends React.Component<ActionBarProps, ActionBar
     }
 
     render() {
-        return (<div style={this.props.style} className={this.props.className}>
-            <button className="waves-effect waves-teal btn-flat  card-panel teal lighten-2" style={buttonStyle} onClick={e => this.onRun()}>RUN</button>
+        return (<div style={{...this.props.style, padding: '7px'}} className={this.props.className + ' z-depth-1'}>
+            <button className="waves-effect waves-teal btn-flat teal lighten-2" style={buttonStyle} onClick={e => this.onRun()}>RUN</button>
         </div>);
     }
 }
