@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-require('!style!css!./css/query-result.css');
+require('!style-loader!css-loader!./css/query-result.css');
 
 interface QueryResultProps extends React.HTMLProps<HTMLDivElement>
 {
@@ -16,28 +16,42 @@ export default class QueryResult extends React.Component<QueryResultProps, any>
 
     render() 
     {
+        var table;
         if (this.props.Result.length === 0)
-            return <table style={this.props.style} className={this.props.className}/>;
+        {
+            table = <table className="result-table"/>
+        }
+        else
+        {
+            var heads = Object
+                .keys(this.props.Result[0])
+                .map((p, pi) => {
+                    return <th key={pi}>{p}</th>
+                });
 
-        var heads = Object
-            .keys(this.props.Result[0])
-            .map((p, pi) => {
-                return <th key={pi}>{p}</th>
-            });
+            var rows = this.props.Result
+                .map((r, ri)=> {
+                    var items = Object.keys(r).map((k, ki )=> <td key={ki}>{r[k]}</td>);
+                    return <tr key={ri}>{items}</tr>;
+                });
 
-        var rows = this.props.Result
-            .map((r, ri)=> {
-                var items = Object.keys(r).map((k, ki )=> <td key={ki}>{r[k]}</td>);
-                return <tr key={ri}>{items}</tr>;
-            });
-
-        var style = Object.assign({ overflow: 'auto' }, this.props.style);
-        return (
-            <div className={this.props.className} style={style}>
+            table = (
                 <table className={'result-table'}>
                     <thead><tr>{heads}</tr></thead>
                     <tbody>{rows}</tbody>
                 </table>
-            </div>);
+            );
+        }
+
+        var style: React.CSSProperties = { 
+            ...this.props.style,
+            overflow: 'auto'
+        };
+
+        return (
+            <div className={this.props.className} style={style}>
+                {table}
+            </div>
+        );
     }
 }

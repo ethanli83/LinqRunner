@@ -2,11 +2,12 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as Request from 'superagent';
 
-import '!style!css!./css/app.css';
+import '!style-loader!css-loader!./css/app.css';
 
 import ActionBar from './action-bar';
 import CodeEditor from './code-editor';
 import QueryResult from './query-result';
+import Panel from './panel';
 
 interface AppState
 {
@@ -62,34 +63,38 @@ class App extends React.Component<any, AppState>
 
         const flexColumn: React.CSSProperties = {
             display: 'flex',
-            flexFlow: 'row',
+            flexFlow: 'row wrap',
             height: '50%',
             flexGrow: 1
         };
 
         const flexItem: React.CSSProperties = {
             flexGrow: 1,
-            width: '100%',
-            height: '100%',
             minWidth: '400px'
         };
 
         return (
             <div style={flexBox}>
                 <div style={flexColumn}>
-                    <div style={flexItem}>
-                        <CodeEditor className="dracula" Theme='dracula' Mode='text/x-csharp' Code={this.state.Query} 
+                    <Panel style={flexItem} Title="Linq">
+                        <CodeEditor className="dracula"
+                                    Theme='dracula' Mode='text/x-csharp' Code={this.state.Query} 
                                     OnChange={this.onCodeChanged} OnRun={this.run}/>
-                    </div>
-                    <div style={flexItem}>
-                        <CodeEditor Theme='dracula' Mode='text/x-sql' ReadOnly={true}
+                    </Panel>
+                    <Panel style={flexItem} Title="Sql">
+                        <CodeEditor className="dracula"
+                                    Theme='dracula' Mode='text/x-sql' ReadOnly={true}
                                     Code={this.state.TranslatedScript}/>
-                    </div>
+                    </Panel>
                 </div>
                 <div style={flexColumn}>
-                    <QueryResult style={flexItem} className='dracula' Result={this.state.QueryResult}></QueryResult>
+                    <Panel style={flexItem} Title="Result">
+                        <QueryResult className='dracula'
+                                     Result={this.state.QueryResult}></QueryResult>
+                    </Panel>
                 </div>
-            </div>);
+            </div>
+        );
     }
 }
 

@@ -61,6 +61,7 @@ export default class CodeEditor extends React.Component<CodeEditorProps, any>
             matchBrackets: true,
             indentUnit: 4,
             completeSingle: false,
+            readOnly: this.props.ReadOnly,
             hint: CM.hint.roslyn,
             extraKeys: {
                 'Cmd-Space': 'autocomplete',
@@ -97,8 +98,8 @@ export default class CodeEditor extends React.Component<CodeEditorProps, any>
 
     render() {
         const containerStyle: React.CSSProperties = {
+            ...this.props.style,
             display: 'flex',
-            height: '100%',
             flexFlow: 'column'
         };
 

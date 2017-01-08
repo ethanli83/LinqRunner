@@ -8,19 +8,22 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/codemirror": "0.0.35",
-    "@types/react": "^0.14.55",
+    "@types/react": "^0.14.57",
     "@types/react-dom": "^0.14.19",
     "@types/superagent": "^2.0.36",
-    "awesome-typescript-loader": "2.2.4",
+    "awesome-typescript-loader": "v3.0.0-beta.9",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-object-rest-spread": "^6.20.2",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.26.1",
     "source-map-loader": "^0.1.5",
     "style-loader": "^0.13.1",
-    "typescript": "2.1.1",
-    "webpack": "^1.14.0"
+    "ts-loader": "^1.3.3",
+    "typescript": "2.1.4",
+    "webpack": "^2.2.0-rc.3"
   }
 }
