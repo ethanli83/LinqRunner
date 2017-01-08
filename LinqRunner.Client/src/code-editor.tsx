@@ -56,7 +56,7 @@ export default class CodeEditor extends React.Component<CodeEditorProps, any>
         const options = {
             mode: this.props.Mode,
             theme: this.props.Theme,
-            value: this.props.Code,
+            value: this.props.Code || '',
             lineNumbers: true,
             matchBrackets: true,
             indentUnit: 4,

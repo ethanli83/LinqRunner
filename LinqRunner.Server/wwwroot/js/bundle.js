@@ -434,7 +434,7 @@ class CodeEditor extends React.Component {
         const options = {
             mode: this.props.Mode,
             theme: this.props.Theme,
-            value: this.props.Code,
+            value: this.props.Code || '',
             lineNumbers: true,
             matchBrackets: true,
             indentUnit: 4,
@@ -551,7 +551,14 @@ class QueryResult extends React.Component {
     }
     render() {
         var table;
-        if (this.props.Result.length === 0) {
+        if (this.props.Running) {
+            table = (React.createElement("div", { className: "progress", style: { alignSelf: 'center', margin: '0px 77px' } },
+                React.createElement("div", { className: "indeterminate" })));
+        }
+        else if (this.props.Error) {
+            table = (React.createElement("div", null, this.props.Error));
+        }
+        else if (!this.props.Result) {
             table = React.createElement("table", { className: "result-table" });
         }
         else {
@@ -570,7 +577,7 @@ class QueryResult extends React.Component {
                     React.createElement("tr", null, heads)),
                 React.createElement("tbody", null, rows)));
         }
-        var style = __assign({}, this.props.style, { overflow: 'auto' });
+        var style = __assign({}, this.props.style, { overflow: 'auto', display: 'flex', justifyContent: 'center' });
         return (React.createElement("div", { className: this.props.className, style: style }, table));
     }
 }
@@ -716,6 +723,14 @@ module.exports = CodeMirror;
 
 "use strict";
 
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
 const React = __webpack_require__(0);
 const ReactDOM = __webpack_require__(8);
 const Request = __webpack_require__(1);
@@ -727,19 +742,32 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this._query = 'db.Orders';
-        this.run = (linq) => {
+        this.run = () => {
+            this.setState(__assign({}, this.state, { Query: this._query, QueryResult: {
+                    Running: true,
+                    Error: null,
+                    Result: null
+                } }));
             var $this = this;
             Request
                 .get('/api/query/db')
                 .query({ linq: $this._query })
                 .set('Accept', 'application/json')
                 .end(function (err, res) {
-                var result = res.body.result.map((o) => o);
-                console.log(result.length);
+                var msg = {
+                    Running: false
+                };
+                if (err) {
+                    msg.Error = err.response.body.Details;
+                }
+                else if (res.body.result) {
+                    var result = res.body.result.map((o) => o);
+                    msg.Result = result;
+                }
                 $this.setState({
                     Query: $this._query,
-                    TranslatedScript: res.body.sql,
-                    QueryResult: result
+                    TranslatedScript: res.body.sql || '',
+                    QueryResult: msg
                 });
             });
         };
@@ -748,8 +776,7 @@ class App extends React.Component {
         };
         this.state = {
             Query: this._query,
-            TranslatedScript: '',
-            QueryResult: []
+            TranslatedScript: ''
         };
     }
     render() {
@@ -783,7 +810,7 @@ class App extends React.Component {
                     React.createElement(code_editor_1.default, { className: "dracula", Theme: 'dracula', Mode: 'text/x-sql', ReadOnly: true, Code: this.state.TranslatedScript }))),
             React.createElement("div", { style: flexColumn },
                 React.createElement(panel_1.default, { style: flexItem, Title: "Result" },
-                    React.createElement(query_result_1.default, { className: 'dracula', Result: this.state.QueryResult })))));
+                    React.createElement(query_result_1.default, __assign({ className: 'dracula' }, this.state.QueryResult))))));
     }
 }
 ReactDOM.render(React.createElement(App, null), document.getElementById('app'));

@@ -13,13 +13,16 @@ interface AppState
 {
     Query: string;
     TranslatedScript: string;
-    QueryResult: Array<any>;
+    QueryResult?: {
+        Result?: Array<any>;
+        Running?: boolean;
+        Error?: string;
+    }
 }
 
 class App extends React.Component<any, AppState> 
 {
     _query: string = 'db.Orders';
-    _codeEditor: CodeEditor;
 
     constructor(props: any)
     {
@@ -27,24 +30,44 @@ class App extends React.Component<any, AppState>
 
         this.state = {
             Query: this._query,
-            TranslatedScript: '',
-            QueryResult: []
+            TranslatedScript: ''
         }
     }
 
-    run = (linq: string) => {
+    run = () => {
+        this.setState({
+            ...this.state,
+            Query: this._query,
+            QueryResult: {
+                Running: true,
+                Error: null,
+                Result: null
+            }
+        })
+
         var $this = this;
+
         Request
             .get('/api/query/db')
             .query({ linq: $this._query })
             .set('Accept', 'application/json')
             .end(function(err, res) {
-                var result = res.body.result.map((o: any) => o) as Array<any>;
-                console.log(result.length);
+                var msg: any = {
+                    Running: false
+                };
+                
+                if (err) {
+                    msg.Error = err.response.body.Details;
+                }
+                else if (res.body.result) {
+                    var result = res.body.result.map((o: any) => o) as Array<any>;
+                    msg.Result = result;
+                }
+
                 $this.setState({
                     Query: $this._query,
-                    TranslatedScript: res.body.sql,
-                    QueryResult: result
+                    TranslatedScript: res.body.sql || '',
+                    QueryResult: msg
                 });
             });
     }
@@ -101,8 +124,8 @@ class App extends React.Component<any, AppState>
                 </div>
                 <div style={flexColumn}>
                     <Panel style={flexItem} Title="Result">
-                        <QueryResult className='dracula'
-                                     Result={this.state.QueryResult}></QueryResult>
+                        <QueryResult className='dracula' {...this.state.QueryResult}>
+                        </QueryResult>
                     </Panel>
                 </div>
             </div>
