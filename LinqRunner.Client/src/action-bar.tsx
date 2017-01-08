@@ -20,7 +20,7 @@ const buttonStyle = {
     
 // 'HelloProps' describes the shape of props.
 // State is never set so we use the 'undefined' type.
-export class ActionBar extends React.Component<ActionBarProps, ActionBarState> {
+export default class ActionBar extends React.Component<ActionBarProps, ActionBarState> {
 
     constructor(props: ActionBarProps) {
         super(props);
@@ -37,7 +37,7 @@ export class ActionBar extends React.Component<ActionBarProps, ActionBarState> {
 
     render() {
         return (<div style={this.props.style} className={this.props.className}>
-            <button style={buttonStyle} onClick={e => this.onRun()}>RUN</button>
+            <button className="waves-effect waves-teal btn-flat  card-panel teal lighten-2" style={buttonStyle} onClick={e => this.onRun()}>RUN</button>
         </div>);
     }
 }

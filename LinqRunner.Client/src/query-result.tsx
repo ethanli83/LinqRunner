@@ -7,7 +7,7 @@ interface QueryResultProps extends React.HTMLProps<HTMLDivElement>
     Result: Array<any>
 }
 
-export class QueryResult extends React.Component<QueryResultProps, any>
+export default class QueryResult extends React.Component<QueryResultProps, any>
 {
     constructor(props: QueryResultProps) 
     {
@@ -32,11 +32,12 @@ export class QueryResult extends React.Component<QueryResultProps, any>
             });
 
         var style = Object.assign({ overflow: 'auto' }, this.props.style);
-        return (<div style={style} className={this.props.className}>
-            <table style={{ width: '100%', height: 'auto' }} className={'result-table'}>
-                <thead><tr>{heads}</tr></thead>
-                <tbody>{rows}</tbody>
-            </table>
-        </div>);
+        return (
+            <div className={this.props.className} style={style}>
+                <table className={'result-table'}>
+                    <thead><tr>{heads}</tr></thead>
+                    <tbody>{rows}</tbody>
+                </table>
+            </div>);
     }
 }

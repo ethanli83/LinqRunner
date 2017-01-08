@@ -1,5 +1,7 @@
+using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -44,7 +46,11 @@ namespace LinqRunner.Server
 
             if (env.IsDevelopment())
             {
-                // app.UseDeveloperExceptionPage();
+                app.Use(async (context, next) =>
+                {
+                    context.Response.Headers.Append("Cache-Control", "no-cache");
+                    await next();
+                });
             }
 
             app.UseDefaultFiles();

@@ -2,16 +2,11 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as Request from 'superagent';
 
-import '!style!css!codemirror/theme/dracula.css';
-import '!style!css!bootstrap/dist/css/bootstrap.min.css';
-
-import 'codemirror/mode/clike/clike';
-import 'codemirror/mode/sql/sql';
 import '!style!css!./css/app.css';
 
-import { ActionBar } from './action-bar';
-import { CodeEditor } from './code-editor';
-import { QueryResult } from './query-result';
+import ActionBar from './action-bar';
+import CodeEditor from './code-editor';
+import QueryResult from './query-result';
 
 interface AppState
 {
@@ -59,26 +54,42 @@ class App extends React.Component<any, AppState>
 
     render()
     {
+        const flexBox: React.CSSProperties = {
+            display: 'flex',
+            height: '100%',
+            flexFlow: 'column'
+        };
+
+        const flexColumn: React.CSSProperties = {
+            display: 'flex',
+            flexFlow: 'row',
+            height: '50%',
+            flexGrow: 1
+        };
+
+        const flexItem: React.CSSProperties = {
+            flexGrow: 1,
+            width: '100%',
+            height: '100%'
+        };
+
         return (
-            <div className="container-style">
-                <div className="row-style">
-                    <div className="col-style">
-                        <CodeEditor style={{width: '100%', height: '95%'}} Theme="dracula" Mode="text/x-csharp" ReadOnly={false}
-                                    Code={this.state.Query} OnCodeChange={(c: string) => this.onCodeChanged(c)}/>
-                        <ActionBar style={{ width: '100%', height: '5%'}} className="dracula" onRunHandler={this.run}/>
+            <div style={flexBox}>
+                <div style={flexColumn}>
+                    <div style={flexItem}>
+                        <CodeEditor className="dracula" Theme='dracula' Mode='text/x-csharp' Code={this.state.Query} 
+                                    OnChange={this.onCodeChanged} OnRun={this.run}/>
                     </div>
-                    <div className="col-style">
-                        <CodeEditor style={{width: '100%', height: '100%'}} Theme="dracula" Mode="text/x-sql" ReadOnly={false}
-                                    Code={this.state.TranslatedScript} OnCodeChange={() =>{}}/>
+                    <div style={flexItem}>
+                        <CodeEditor Theme='dracula' Mode='text/x-sql' ReadOnly={true}
+                                    Code={this.state.TranslatedScript}/>
                     </div>
                 </div>
-                <div className="row-style">
-                    <div className="full-col-style" style={{ overflow: 'scroll' }}>
-                        <QueryResult style={{width: '100%', height: '100%'}} className="dracula" Result={this.state.QueryResult}></QueryResult>
-                    </div>
+                <div style={flexColumn}>
+                    <QueryResult style={flexItem} className='dracula' Result={this.state.QueryResult}></QueryResult>
                 </div>
             </div>);
     }
 }
 
-ReactDOM.render(<App/>, document.getElementById("app"));
+ReactDOM.render(<App/>, document.getElementById('app'));

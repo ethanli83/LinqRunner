@@ -2,22 +2,19 @@ import * as React from 'react';
 import * as CodeMirror from 'codemirror';
 import * as superagent from 'superagent';
 
-import '!style!css!codemirror/lib/codemirror.css';
-import '!style!css!codemirror/addon/hint/show-hint.css';
-
-import 'codemirror/addon/hint/show-hint';
-import 'codemirror/addon/hint/sql-hint';
+import ActionBar from './action-bar';
 
 export interface CodeEditorProps extends React.HTMLProps<HTMLDivElement>
 {
     Code: string,
     Mode: string,
     Theme: string,
-    ReadOnly: boolean,
-    OnCodeChange: Function
+    ReadOnly?: boolean,
+    OnChange?: Function,
+    OnRun?: Function
 }
 
-export class CodeEditor extends React.Component<CodeEditorProps, any>
+export default class CodeEditor extends React.Component<CodeEditorProps, any>
 {
     _editor: CodeMirror.Editor;
     _editorElement:HTMLDivElement;
@@ -80,7 +77,10 @@ export class CodeEditor extends React.Component<CodeEditorProps, any>
 		this._editor = CodeMirror(this._editorElement, options);
 
         this._editor.on('change', (editor: CodeMirror.Editor, change: CodeMirror.EditorChange) => {
-            this.props.OnCodeChange(editor.getValue());
+            if (!this.props.OnChange)
+                return;
+            
+            this.props.OnChange(editor.getValue());
         });
     }
 
@@ -88,7 +88,7 @@ export class CodeEditor extends React.Component<CodeEditorProps, any>
         if (!this._editor)
             return;
 
-        this._editor.setValue(this.props.Code);
+        this._editor.setValue(this.props.Code.trim());
     }
 
     getCode() {
@@ -96,9 +96,29 @@ export class CodeEditor extends React.Component<CodeEditorProps, any>
     }
 
     render() {
+        const containerStyle: React.CSSProperties = {
+            display: 'flex',
+            height: '100%',
+            flexFlow: 'column'
+        };
+
+        const codeMirrorStyle: React.CSSProperties = {
+            flexGrow: 1,
+            flexBasis: 0
+        };
+
+        const ButtonStyle: React.CSSProperties = {
+            flexGrow: 0
+        };
+
+        var button = !this.props.ReadOnly 
+            ? (<ActionBar style={ButtonStyle} className={this.props.className} onRunHandler={this.props.OnRun}/>)
+            : "";
+
         return (
-            <div className={this.props.className} style={this.props.style}
-                 ref={d => this._editorElement = d}>
+            <div style={containerStyle}>
+                <div style={codeMirrorStyle} ref={d => this._editorElement = d}></div>
+                {button}
             </div>);
     }
 }

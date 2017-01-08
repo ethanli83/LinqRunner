@@ -7,7 +7,7 @@ module.exports = {
 
     entry: {
         app: './app.tsx',
-        vendor: ['react', 'react-dom', 'codemirror', 'superagent']
+        vendor: []
     },
     
     output: {
@@ -39,8 +39,15 @@ module.exports = {
 
     plugins: [
         new webpack.optimize.CommonsChunkPlugin(/* chunkName= */'vendor', /* filename= */'vendor.bundle.js'),
-         new CopyWebpackPlugin([
+        new CopyWebpackPlugin([
             { from: './**/*.html', to: '../' }
-         ])
-    ]
+        ])
+    ],
+
+    externals: {
+        "react": "React",
+        "react-dom": "ReactDOM",
+        "superagent": "superagent",
+        "codemirror": "CodeMirror"
+    }
 };
