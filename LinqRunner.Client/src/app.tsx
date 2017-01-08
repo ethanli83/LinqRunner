@@ -80,20 +80,21 @@ class App extends React.Component<any, AppState>
     {
         const flexBox: React.CSSProperties = {
             display: 'flex',
+            flexFlow: 'column',
             height: '100%',
-            flexFlow: 'column'
+            minHeight: '1000px'
         };
 
         const flexColumn: React.CSSProperties = {
             display: 'flex',
             flexFlow: 'row wrap',
-            height: '50%',
             flexGrow: 1
         };
 
         const flexItem: React.CSSProperties = {
             flexGrow: 1,
-            minWidth: '400px'
+            minWidth: '300px',
+            minHeight: '300px'
         };
 
         return (
