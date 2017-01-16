@@ -8,9 +8,12 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "github": "^8.1.0"
+  },
   "devDependencies": {
     "@types/codemirror": "0.0.35",
+    "@types/github": "0.0.0",
     "@types/react": "^0.14.57",
     "@types/react-dom": "^0.14.19",
     "@types/superagent": "^2.0.36",

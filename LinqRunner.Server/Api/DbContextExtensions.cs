@@ -6,7 +6,6 @@ using EFSqlTranslator.EFModels;
 using EFSqlTranslator.Translation;
 using EFSqlTranslator.Translation.DbObjects.SqlObjects;
 using Microsoft.EntityFrameworkCore;
-using MySql.Data.MySqlClient;
 
 namespace LinqRunner.Server.Api
 {
@@ -16,6 +15,8 @@ namespace LinqRunner.Server.Api
         {
             using (var connection = db.Database.GetDbConnection())
             {
+                sql = string.Empty;
+
                 try
                 {
                     var script = LinqTranslator.Translate(query.Expression, new EFModelInfoProvider(db), new SqlObjectFactory());
@@ -30,8 +31,7 @@ namespace LinqRunner.Server.Api
                     Console.WriteLine("NOT WORKING!!");
                     Console.WriteLine(e);
 
-                    sql = null;
-                    return null;
+                    throw;
                 }
             }
         }

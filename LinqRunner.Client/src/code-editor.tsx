@@ -2,8 +2,6 @@ import * as React from 'react';
 import * as CodeMirror from 'codemirror';
 import * as superagent from 'superagent';
 
-import ActionBar from './action-bar';
-
 export interface CodeEditorProps extends React.HTMLProps<HTMLDivElement>
 {
     Code: string,
@@ -112,14 +110,6 @@ export default class CodeEditor extends React.Component<CodeEditorProps, any>
             flexGrow: 0
         };
 
-        var button = !this.props.ReadOnly 
-            ? (<ActionBar style={ButtonStyle} className={this.props.className} onRunHandler={this.props.OnRun}/>)
-            : "";
-
-        return (
-            <div style={containerStyle}>
-                <div style={codeMirrorStyle} ref={d => this._editorElement = d}></div>
-                {button}
-            </div>);
+        return <div style={codeMirrorStyle} ref={d => this._editorElement = d}></div>;
     }
 }

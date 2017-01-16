@@ -1,6 +1,10 @@
 using Autofac;
+using Nancy;
+using Nancy.Bootstrapper;
 using Nancy.Bootstrappers.Autofac;
 using Nancy.Configuration;
+using Nancy.Session;
+using Nancy.TinyIoc;
 
 namespace LinqRunner.Server
 {
@@ -24,6 +28,14 @@ namespace LinqRunner.Server
         {
             var config = new Nancy.TraceConfiguration(enabled: false, displayErrorTraces: true);
             environment.AddValue(config);
+        }
+    }
+
+    public class CustomBootstrapper : DefaultNancyBootstrapper
+    {
+        protected override void ApplicationStartup(TinyIoCContainer container, IPipelines pipelines)
+        {
+            CookieBasedSessions.Enable(pipelines);
         }
     }
 }

@@ -14,35 +14,32 @@ export default class Panel extends React.Component<PanelProps, any>
 
     render() 
     {
-        const codeMirrorStyle: React.CSSProperties = {
+        const contentStyle: React.CSSProperties = {
             flexGrow: 1,
             flexBasis: 0
         };
 
-        const ButtonStyle: React.CSSProperties = {
+        const titleStyle: React.CSSProperties = {
             flexGrow: 0,
-            marginBottom: '7px'
+            padding: '7px',
+            color: '#ffffff'
         };
 
-        const style: React.CSSProperties = {
+        const panel: React.CSSProperties = {
             ...this.props.style,
             display: 'flex',
             flexFlow: 'column',
-            padding: '7px',
-            margin: '7px',
-            borderBottomLeftRadius: '3px',
-            borderBottomRightRadius: '3px',
-            borderTopLeftRadius: '3px',
-            borderTopRightRadius: '3px'
+            margin: '7px'
         }
 
         var children = React.Children.map(this.props.children, (child: React.ReactElement<any>) => {
-            return React.cloneElement(child, { style: codeMirrorStyle });
+            var style = { ...child.props.style, ...contentStyle };
+            return React.cloneElement(child, { style: style });
         });
 
         return (
-            <div style={style} className="teal lighten-2 z-depth-3">
-                <div style={ButtonStyle}>
+            <div style={panel} className="teal lighten-2 z-depth-3">
+                <div style={titleStyle}>
                     {this.props.Title}
                 </div>
                 {children}
