@@ -78,7 +78,7 @@ class App extends React.Component<any, AppState>
             return;
 
         var description = `Query:
-${this.state.Query}
+<pre>${this.state.Query}</pre>
 
 Error:
 ${this.state.QueryResult.Error}`;
