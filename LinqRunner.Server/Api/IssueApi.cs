@@ -34,7 +34,7 @@ namespace LinqRunner.Server.Api
         private async Task<HttpResponseMessage> CreateIssue(string issue)
         {
             var req = new HttpRequestMessage(HttpMethod.Post, "https://api.github.com/repos/ethanli83/EFSqlTranslator/issues");
-            req.Headers.Authorization = new AuthenticationHeaderValue("token", "abf856788973128b19a9064a31dd904034660436");
+            req.Headers.Authorization = new AuthenticationHeaderValue("token", "445f3184b9259cdfcf52e20029882ccc79be9fe0");
             req.Content = new StringContent(issue, Encoding.UTF8, "application/json");
             req.Headers.Add("User-Agent", "TestingToken");
 
