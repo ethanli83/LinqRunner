@@ -4,6 +4,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Nancy;
+using Nancy.Responses.Negotiation;
 
 namespace LinqRunner.Server.Api
 {
@@ -26,7 +27,7 @@ namespace LinqRunner.Server.Api
             });
         }
 
-        private async Task<int> CreateIssue(string issue)
+        private async Task<Negotiator> CreateIssue(string issue)
         {
             var req = new HttpRequestMessage(HttpMethod.Post, _config.GithubIssueApi);
             req.Headers.Authorization = new AuthenticationHeaderValue("token", _config.GithubApiToken);
@@ -34,9 +35,7 @@ namespace LinqRunner.Server.Api
             req.Headers.Add("User-Agent", _config.GithubTokenName);
 
             var res = await HttpClient.SendAsync(req);
-
-            Negotiate.WithStatusCode((int) res.StatusCode);
-            return await Task.FromResult((int)res.StatusCode);
+            return Negotiate.WithStatusCode((int) res.StatusCode);
         }
     }
 }
