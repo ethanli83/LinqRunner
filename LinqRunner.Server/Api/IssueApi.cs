@@ -26,7 +26,7 @@ namespace LinqRunner.Server.Api
             });
         }
 
-        private async Task<HttpResponseMessage> CreateIssue(string issue)
+        private async Task<int> CreateIssue(string issue)
         {
             var req = new HttpRequestMessage(HttpMethod.Post, _config.GithubIssueApi);
             req.Headers.Authorization = new AuthenticationHeaderValue("token", _config.GithubApiToken);
@@ -36,7 +36,7 @@ namespace LinqRunner.Server.Api
             var res = await HttpClient.SendAsync(req);
 
             Negotiate.WithStatusCode((int) res.StatusCode);
-            return res;
+            return await Task.FromResult((int)res.StatusCode);
         }
     }
 }
