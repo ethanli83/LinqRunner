@@ -43,7 +43,8 @@ module.exports = {
         //     filename: 'vendor.bundle.js' 
         // }),
         new CopyWebpackPlugin([
-            { from: './**/*.html', to: '../' }
+            { from: './**/*.html', to: '../' },
+            { from: './favicon.ico', to: '../' }
         ])
     ],
 
