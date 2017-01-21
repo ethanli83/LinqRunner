@@ -55,7 +55,7 @@ namespace LinqRunner.Server
             app.UseDefaultFiles();
             app.UseStaticFiles();
 
-            var config = this.Configuration;
+            var config = Configuration;
             var appConfig = new AppConfiguration();
             config.Bind(appConfig);
 

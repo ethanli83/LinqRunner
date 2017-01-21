@@ -2,8 +2,7 @@ import * as React from 'react';
 
 export interface ActionBarProps extends React.HTMLProps<HTMLDivElement> {
     onRunHandler: Function,
-    ReportIssueModal: string,
-    HasIssue: boolean
+    ReportIssueModal: string
 }
 
 interface ActionBarState {
@@ -51,22 +50,15 @@ export default class ActionBar extends React.Component<ActionBarProps, ActionBar
         }
         
         return (
-            <nav style={iconStyle}>
-                <div className="nav-wrapper teal lighten-2">
-                    <ul className="left">
-                        <li>
-                            <a href="#" onClick={() => this.props.onRunHandler()} className="btn-flat" style={linkStyle}>
-                                <i className="material-icons left" style={iconStyle}>play_arrow</i>Run
-                            </a>
-                        </li>
-                        <li>
-                            <a href={'#' + this.props.ReportIssueModal} className={'btn-flat' + (this.props.HasIssue ? '' : ' disabled')} style={linkStyle}>
-                                <i className="material-icons left" style={iconStyle}>error_outline</i>Report a issue
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+            <div style={iconStyle} className="teal lighten-2">
+                <a className="waves-effect waves-teal btn-flat teal lighten-2" style={linkStyle}
+                        onClick={() => this.props.onRunHandler()}>
+                    <i className="material-icons left" style={iconStyle}>play_arrow</i>Run
+                </a>
+                <a href={'#' + this.props.ReportIssueModal} className="waves-effect waves-teal btn-flat teal lighten-2" style={linkStyle}>
+                    <i className="material-icons left" style={iconStyle}>error_outline</i>Report a issue
+                </a>
+            </div>
         );
     }
 }

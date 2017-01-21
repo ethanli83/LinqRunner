@@ -1,9 +1,10 @@
 ﻿{
+    "version": "1.0.0-*",
+    "buildOptions": {
+        "emitEntryPoint": true,
+        "preserveCompilationContext": true
+    },
     "dependencies": {
-        "Microsoft.NETCore.App": {
-            "version": "1.1.0",
-            "type": "platform"
-        },
         "Dapper": "1.50.2",
         "EFSqlTranslator.Translation": "1.0.0-alpha4",
         "EFSqlTranslator.EFModels": "1.0.0-alpha4",
@@ -24,35 +25,32 @@
         "Nancy.Bootstrappers.Autofac": "2.0.0-clinteastwood ",
         "Nancy.Owin": "2.0.0-clinteastwood ",
         "Nancy.Serialization.JsonNet": "2.0.0-clinteastwood ",
-        "Pomelo.EntityFrameworkCore.MySql": "1.1.1-prerelease-10007",
-        "Pomelo.EntityFrameworkCore.MySql.Design": "1.1.1-prerelease-10007",
-        "Autofac": "4.2.1"
+        "Pomelo.EntityFrameworkCore.MySql": "1.1.1-prerelease-10012",
+        "Pomelo.EntityFrameworkCore.MySql.Design": "1.1.1-prerelease-10012",
+        "Autofac": "4.3.0"
     },
-
     "tools": {
         "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.0.0-preview2-final"
     },
-
     "frameworks": {
         "netcoreapp1.1": {
+            "dependencies": {
+                "Microsoft.NETCore.App": {
+                    "version": "1.1.0",
+                    "type": "platform"
+                }
+            },
             "imports": [
                 "dotnet5.6",
                 "net452"
             ]
         }
     },
-
-    "buildOptions": {
-        "emitEntryPoint": true,
-        "preserveCompilationContext": true
-    },
-
     "runtimeOptions": {
         "configProperties": {
             "System.GC.Server": true
         }
     },
-
     "publishOptions": {
         "include": [
             "wwwroot",
@@ -60,7 +58,6 @@
             "web.config"
         ]
     },
-
     "scripts": {
         "postpublish": [
             "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%"

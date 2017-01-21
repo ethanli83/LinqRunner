@@ -6,7 +6,7 @@
       "AsyncUsageAnalyzers/1.0.0-alpha003": {
         "type": "package"
       },
-      "Autofac/4.2.1": {
+      "Autofac/4.3.0": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.0",
@@ -1174,7 +1174,7 @@
           }
         }
       },
-      "MySqlConnector/0.10.0": {
+      "MySqlConnector/0.11.2": {
         "type": "package",
         "dependencies": {
           "System.Buffers": "4.0.0",
@@ -1398,11 +1398,11 @@
           "lib/net40/Owin.dll": {}
         }
       },
-      "Pomelo.EntityFrameworkCore.MySql/1.1.1-prerelease-10007": {
+      "Pomelo.EntityFrameworkCore.MySql/1.1.1-prerelease-10012": {
         "type": "package",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Relational": "1.1.0",
-          "MySqlConnector": "0.10.0",
+          "MySqlConnector": "0.11.2",
           "Pomelo.JsonObject": "1.1.0",
           "System.Threading.Tasks.Extensions": "4.3.0"
         },
@@ -1413,14 +1413,14 @@
           "lib/netstandard1.3/Pomelo.EntityFrameworkCore.MySql.dll": {}
         }
       },
-      "Pomelo.EntityFrameworkCore.MySql.Design/1.1.1-prerelease-10007": {
+      "Pomelo.EntityFrameworkCore.MySql.Design/1.1.1-prerelease-10012": {
         "type": "package",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.0",
           "Microsoft.Extensions.DependencyInjection": "1.1.0",
           "Microsoft.Extensions.Logging.Console": "1.1.0",
-          "MySqlConnector": "0.10.0",
-          "Pomelo.EntityFrameworkCore.MySql": "1.1.1-prerelease-10007"
+          "MySqlConnector": "0.11.2",
+          "Pomelo.EntityFrameworkCore.MySql": "1.1.1-prerelease-10012"
         },
         "compile": {
           "lib/netstandard1.3/Pomelo.EntityFrameworkCore.MySql.Design.dll": {}
@@ -3852,12 +3852,12 @@
         "tools/uninstall.ps1"
       ]
     },
-    "Autofac/4.2.1": {
-      "sha512": "mLXJziTZPIt7R6m8SmPIOjMTd4k8Ok9L21j4yFniyA8AogHxEL2XburSwElJLmGU5KsgeMkpuTI22S3GSOeLqQ==",
+    "Autofac/4.3.0": {
+      "sha512": "fCrt0EBW99+q1R6iA3+JBYmtfCDYfMHzsAtaDZ8/kbq9tW+Ze5W8SrxwTHqpbPI4Cp4/0NeJDaODD+D3cOfdHQ==",
       "type": "package",
-      "path": "Autofac/4.2.1",
+      "path": "Autofac/4.3.0",
       "files": [
-        "Autofac.4.2.1.nupkg.sha512",
+        "Autofac.4.3.0.nupkg.sha512",
         "Autofac.nuspec",
         "lib/net45/Autofac.dll",
         "lib/net45/Autofac.xml",
@@ -4876,12 +4876,12 @@
         "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Registry.dll"
       ]
     },
-    "MySqlConnector/0.10.0": {
-      "sha512": "Chm5dyhCf8BKA9nGvLoeVqqWrp6Q5/gbnPxsybwV8EAEWeQZhvK1cE0ViHZ0lBeOhKXa1mdceT6XBCyKq751nA==",
+    "MySqlConnector/0.11.2": {
+      "sha512": "OBFxBTRvSd4cfdgTOBk0kFNOtVMWRghfHl7jOT7G5Vm8tUt829ow3Ptk93ZQJvuzuvYw8ZLs16jMJ4k0zhzt9A==",
       "type": "package",
-      "path": "MySqlConnector/0.10.0",
+      "path": "MySqlConnector/0.11.2",
       "files": [
-        "MySqlConnector.0.10.0.nupkg.sha512",
+        "MySqlConnector.0.11.2.nupkg.sha512",
         "MySqlConnector.nuspec",
         "lib/net451/MySqlConnector.dll",
         "lib/netstandard1.3/MySqlConnector.dll"
@@ -5007,23 +5007,23 @@
         "owin.nuspec"
       ]
     },
-    "Pomelo.EntityFrameworkCore.MySql/1.1.1-prerelease-10007": {
-      "sha512": "auKsaEzWgSlfW/2ShdXpmF9fyMgrQB4fQFnxD76sO2vxHUeFYufu8w2hd2T4Vf+ygQOjgmhJBi2nmSQOAReFyw==",
+    "Pomelo.EntityFrameworkCore.MySql/1.1.1-prerelease-10012": {
+      "sha512": "zo3scx23dZU+3eZvt9g5VSQXiimUdMVkPIlg3j8TtLl81VH8nys7PvquXRGDZhm+eswvTpKvUYHcxkWcm8ryuw==",
       "type": "package",
-      "path": "Pomelo.EntityFrameworkCore.MySql/1.1.1-prerelease-10007",
+      "path": "Pomelo.EntityFrameworkCore.MySql/1.1.1-prerelease-10012",
       "files": [
-        "Pomelo.EntityFrameworkCore.MySql.1.1.1-prerelease-10007.nupkg.sha512",
+        "Pomelo.EntityFrameworkCore.MySql.1.1.1-prerelease-10012.nupkg.sha512",
         "Pomelo.EntityFrameworkCore.MySql.nuspec",
         "lib/net451/Pomelo.EntityFrameworkCore.MySql.dll",
         "lib/netstandard1.3/Pomelo.EntityFrameworkCore.MySql.dll"
       ]
     },
-    "Pomelo.EntityFrameworkCore.MySql.Design/1.1.1-prerelease-10007": {
-      "sha512": "5nlEXGq1A7g45bxcM5ioTBh1l5n2KKF7EBNuuPCcQKqaPTMSAxP++Vu6x5FFRIeU3eoPJxR/OBdQ/SynN9bM9g==",
+    "Pomelo.EntityFrameworkCore.MySql.Design/1.1.1-prerelease-10012": {
+      "sha512": "DTtRGNXMRhnPqoYD91vR7/NyX32sk1iKdljouH+91hxTozlebSNDddXtgyasHc3WE4RFPbckn7kza26WJfxSxQ==",
       "type": "package",
-      "path": "Pomelo.EntityFrameworkCore.MySql.Design/1.1.1-prerelease-10007",
+      "path": "Pomelo.EntityFrameworkCore.MySql.Design/1.1.1-prerelease-10012",
       "files": [
-        "Pomelo.EntityFrameworkCore.MySql.Design.1.1.1-prerelease-10007.nupkg.sha512",
+        "Pomelo.EntityFrameworkCore.MySql.Design.1.1.1-prerelease-10012.nupkg.sha512",
         "Pomelo.EntityFrameworkCore.MySql.Design.nuspec",
         "lib/net451/Pomelo.EntityFrameworkCore.MySql.Design.dll",
         "lib/netstandard1.3/Pomelo.EntityFrameworkCore.MySql.Design.dll"
@@ -10194,7 +10194,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Autofac >= 4.2.1",
+      "Autofac >= 4.3.0",
       "Dapper >= 1.50.2",
       "EFSqlTranslator.EFModels >= 1.0.0-alpha4",
       "EFSqlTranslator.Translation >= 1.0.0-alpha4",
@@ -10211,15 +10211,16 @@
       "Microsoft.Extensions.Logging.Console >= 1.1.0",
       "Microsoft.Extensions.Logging.Debug >= 1.1.0",
       "Microsoft.Extensions.Options.ConfigurationExtensions >= 1.1.0",
-      "Microsoft.NETCore.App >= 1.1.0",
       "Nancy >= 2.0.0-clinteastwood",
       "Nancy.Bootstrappers.Autofac >= 2.0.0-clinteastwood",
       "Nancy.Owin >= 2.0.0-clinteastwood",
       "Nancy.Serialization.JsonNet >= 2.0.0-clinteastwood",
-      "Pomelo.EntityFrameworkCore.MySql >= 1.1.1-prerelease-10007",
-      "Pomelo.EntityFrameworkCore.MySql.Design >= 1.1.1-prerelease-10007"
+      "Pomelo.EntityFrameworkCore.MySql >= 1.1.1-prerelease-10012",
+      "Pomelo.EntityFrameworkCore.MySql.Design >= 1.1.1-prerelease-10012"
     ],
-    ".NETCoreApp,Version=v1.1": []
+    ".NETCoreApp,Version=v1.1": [
+      "Microsoft.NETCore.App >= 1.1.0"
+    ]
   },
   "tools": {
     ".NETCoreApp,Version=v1.0": {

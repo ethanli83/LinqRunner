@@ -10,6 +10,7 @@ import ActionBar from './action-bar';
 import CodeEditor from './code-editor';
 import QueryResult from './query-result';
 import Panel from './panel';
+import IssueForm from './issue-form';
 
 interface AppState {
     Query: string;
@@ -73,38 +74,6 @@ class App extends React.Component<any, AppState>
             });
     }
 
-    reportIssue = () => {
-        if (!this.state.QueryResult || !this.state.QueryResult.Error)
-            return;
-
-        var description = `Query:
-<pre>${this.state.Query}</pre>
-
-Error:
-${this.state.QueryResult.Error}`;
-
-            var issue = {
-                "title": "Issue with a query",
-                "body": description,
-                "assignee": "ethanli83",
-                "labels": [
-                    "bug"
-                ]
-            };
-
-            Request
-                .post('/api/issue/create')
-                .set('Accept', 'application/json')
-                .send(issue)
-                .end(function (err, res) {
-                    if (err) {
-                        Materialize.toast('Fail to report', 2000);
-                    } else {
-                        Materialize.toast('Issue reported', 2000);
-                    }
-                });
-    }
-
     onCodeChanged = (newCode: string) => {
         this._query = newCode;
     }
@@ -130,30 +99,21 @@ ${this.state.QueryResult.Error}`;
             minHeight: '200px'
         };
 
-        var popout = <div/>;
-        var hasIssue = this.state.QueryResult != null && this.state.QueryResult.Error != null;
-        if (hasIssue) {
-            popout = (
-                <div style={{ maxHeight: '400px' }}>
-                    <div className="modal-content">
-                        <h4>Query</h4>
-                        <p>{this.state.Query}</p>
-                        <h4>Error</h4>
-                        <p>{this.state.QueryResult.Error}</p>
-                    </div>
-                    <div className="modal-footer">
-                        <a href="#!" className="modal-action modal-close waves-effect waves-green btn-flat" onClick={this.reportIssue}>Send</a>
-                        <a href="#!" className="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
-                    </div>
-                </div>
-            );
-        }
-
+        const logoStyle: React.CSSProperties = {
+            backgroundImage: 'url(./img/Butterfly.svg)',
+            backgroundSize: 'auto 60%',
+            backgroundPosition: '0% 50%',
+            backgroundRepeat: 'no-repeat',
+            paddingLeft: '1.3em',
+            fontStyle: 'iltac'
+        };
         return (
             <div style={flexBox}>
-                <nav>
-                    <div className="nav-wrapper teal lighten-2">
-                        <a href="#" style={{ marginLeft: '7px' }} className="brand-logo">Linq Runner</a>
+                <nav className="teal lighten-2">
+                    <div className="nav-wrapper">
+                        <a href="#" className="brand-logo left" style={{ ...logoStyle, marginLeft: '7px', maxHeight: '100%' }}>
+                            Linq Runner
+                        </a>
                         <ul className="right hide-on-med-and-down">
                             <li>
                                 <a href="https://github.com/ethanli83/EFSqlTranslator" target="_blank">
@@ -168,7 +128,7 @@ ${this.state.QueryResult.Error}`;
                         <CodeEditor className="dracula"
                             Theme='dracula' Mode='text/x-csharp' Code={this.state.Query}
                             OnChange={this.onCodeChanged} OnRun={this.run} />
-                        <ActionBar onRunHandler={this.run} ReportIssueModal="modal1" HasIssue={hasIssue} />
+                        <ActionBar onRunHandler={this.run} ReportIssueModal="modal1"/>
                     </Panel>
                     <Panel style={flexItem} Title="Sql">
                         <CodeEditor className="dracula"
@@ -183,7 +143,7 @@ ${this.state.QueryResult.Error}`;
                     </Panel>
                 </div>
                 <div id="modal1" className="modal modal-fixed-footer">
-                    {popout}
+                    <IssueForm Linq={this.state.Query} Error={this.state.QueryResult != null ? this.state.QueryResult.Error : ''} />
                 </div>
             </div>
         );
