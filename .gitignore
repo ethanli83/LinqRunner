@@ -10,3 +10,4 @@ packages/*
 **/.awcache/*
 LinqRunner.Server/wwwroot/*
 LinqRunner.Server/appsettings.*
+config
