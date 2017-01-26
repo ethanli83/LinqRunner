@@ -48,11 +48,11 @@
           "lib/netstandard1.3/Dapper.dll": {}
         }
       },
-      "EFSqlTranslator.EFModels/1.0.0-alpha5": {
+      "EFSqlTranslator.EFModels/1.0.0-alpha6": {
         "type": "package",
         "dependencies": {
           "Dapper": "1.50.2",
-          "EFSqlTranslator.Translation": "1.0.0-alpha5",
+          "EFSqlTranslator.Translation": "1.0.0-alpha6",
           "Microsoft.EntityFrameworkCore.Design": "1.1.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "1.1.0",
           "Microsoft.NETCore.App": "1.1.0"
@@ -64,7 +64,7 @@
           "lib/netcoreapp1.1/EFSqlTranslator.EFModels.dll": {}
         }
       },
-      "EFSqlTranslator.Translation/1.0.0-alpha5": {
+      "EFSqlTranslator.Translation/1.0.0-alpha6": {
         "type": "package",
         "dependencies": {
           "Dapper": "1.50.2",
@@ -3882,22 +3882,22 @@
         "lib/netstandard1.3/Dapper.xml"
       ]
     },
-    "EFSqlTranslator.EFModels/1.0.0-alpha5": {
-      "sha512": "VCVK93e52A+xYyeYcTAXrRV7Hx8yH+hTsynLi9OVyyoBJEPhsu+hae5x3zfykaMjjgqVNbL8TxBHiqpXWPWWqQ==",
+    "EFSqlTranslator.EFModels/1.0.0-alpha6": {
+      "sha512": "czuX3qmSyWIz78ruLxUQ83Ffba7lwOgo2sHa2pZYD5LQ3j1KMf+04f87t/vlIR+FQWLirCBlTRjoHsxWqx9EoA==",
       "type": "package",
-      "path": "EFSqlTranslator.EFModels/1.0.0-alpha5",
+      "path": "EFSqlTranslator.EFModels/1.0.0-alpha6",
       "files": [
-        "EFSqlTranslator.EFModels.1.0.0-alpha5.nupkg.sha512",
+        "EFSqlTranslator.EFModels.1.0.0-alpha6.nupkg.sha512",
         "EFSqlTranslator.EFModels.nuspec",
         "lib/netcoreapp1.1/EFSqlTranslator.EFModels.dll"
       ]
     },
-    "EFSqlTranslator.Translation/1.0.0-alpha5": {
-      "sha512": "RHJRNNk8E5B2Hj6LotkUNnYIa812nowxhCEL2bfxOtomeKBY0jiBu2LWKyWPdwtDQsFi441QmRrDH+6z7JiDVg==",
+    "EFSqlTranslator.Translation/1.0.0-alpha6": {
+      "sha512": "/aJ5A/NiTg5t6AcuSsubiFd9wT6N8/4FjVhxKhXsj0cDJttFooIBjT+k+yHiqz0ZS18UFvGnHnAb+amfuVmV4g==",
       "type": "package",
-      "path": "EFSqlTranslator.Translation/1.0.0-alpha5",
+      "path": "EFSqlTranslator.Translation/1.0.0-alpha6",
       "files": [
-        "EFSqlTranslator.Translation.1.0.0-alpha5.nupkg.sha512",
+        "EFSqlTranslator.Translation.1.0.0-alpha6.nupkg.sha512",
         "EFSqlTranslator.Translation.nuspec",
         "lib/netcoreapp1.1/EFSqlTranslator.Translation.dll"
       ]
@@ -10196,8 +10196,8 @@
     "": [
       "Autofac >= 4.3.0",
       "Dapper >= 1.50.2",
-      "EFSqlTranslator.EFModels >= 1.0.0-alpha5",
-      "EFSqlTranslator.Translation >= 1.0.0-alpha5",
+      "EFSqlTranslator.EFModels >= 1.0.0-alpha6",
+      "EFSqlTranslator.Translation >= 1.0.0-alpha6",
       "Microsoft.AspNetCore.Owin >= 1.1.0",
       "Microsoft.AspNetCore.Routing >= 1.1.0",
       "Microsoft.AspNetCore.Server.IISIntegration >= 1.1.0",

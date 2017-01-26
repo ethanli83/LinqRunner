@@ -20,8 +20,7 @@ namespace LinqRunner.Server.Api
                 await RunLinq(linqRunner, Request.Query.linq));
 
             Get("/autocomplete", async args =>
-                await GetLinqCompletions(
-                    linqCompleter, Request.Query.linq, Request.Query.start, Request.Query.end, Request.Query.line));
+                await GetLinqCompletions(linqCompleter, Request.Query.linq, Request.Query.start, Request.Query.end, Request.Query.line));
         }
 
         private async Task<object> RunLinq(LinqRunner linqRunner, string linq)
