@@ -56,7 +56,7 @@ export default class ActionBar extends React.Component<ActionBarProps, ActionBar
                     <i className="material-icons left" style={iconStyle}>play_arrow</i>Run
                 </a>
                 <a href={'#' + this.props.ReportIssueModal} className="waves-effect waves-teal btn-flat teal lighten-2" style={linkStyle}>
-                    <i className="material-icons left" style={iconStyle}>error_outline</i>Report a issue
+                    <i className="material-icons left" style={iconStyle}>error_outline</i>Report an issue
                 </a>
             </div>
         );
