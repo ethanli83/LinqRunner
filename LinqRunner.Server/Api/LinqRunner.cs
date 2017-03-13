@@ -24,14 +24,16 @@ namespace LinqRunner.Server.Api
             var linqlib = typeof(Queryable).GetTypeInfo().Assembly;
             var dapperlib = typeof(Dapper.CommandDefinition).GetTypeInfo().Assembly;
             var extlib = typeof(DbContextExtensions).GetTypeInfo().Assembly;
+            var eftlib = typeof(EntityFrameworkQueryableExtensions).GetTypeInfo().Assembly;
 
-            _defaultReferences = new [] { mscorlib, linqlib, dapperlib, extlib };
+            _defaultReferences = new [] { mscorlib, linqlib, dapperlib, extlib, eftlib };
 
             //Add namespaces
             _scriptOptions = _scriptOptions.AddImports("System");
             _scriptOptions = _scriptOptions.AddImports("System.Linq");
             _scriptOptions = _scriptOptions.AddImports("System.Collections.Generic");
             _scriptOptions = _scriptOptions.AddImports("Dapper");
+            _scriptOptions = _scriptOptions.AddImports("Microsoft.EntityFrameworkCore");
         }
 
         public async Task<dynamic> RunAsync<T>(string linq, T db) where T : DbContext

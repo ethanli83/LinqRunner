@@ -6,7 +6,7 @@ namespace LinqRunner.Server.DataModel
     {
         public Suppliers()
         {
-            Products = new HashSet<Products>();
+            Products = new List<Products>();
         }
 
         public int SupplierId { get; set; }
@@ -22,6 +22,6 @@ namespace LinqRunner.Server.DataModel
         public string PostalCode { get; set; }
         public string Region { get; set; }
 
-        public virtual ICollection<Products> Products { get; set; }
+        public virtual List<Products> Products { get; set; }
     }
 }

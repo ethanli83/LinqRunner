@@ -3,7 +3,7 @@ services:
     web:
         image: "daydreamerio/linqrunner"
         ports:
-            - "5000:5000"
+            - "80:5000"
         links:
             - mysql
         volumes: 

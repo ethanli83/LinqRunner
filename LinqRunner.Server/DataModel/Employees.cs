@@ -7,8 +7,8 @@ namespace LinqRunner.Server.DataModel
     {
         public Employees()
         {
-            EmployeeTerritories = new HashSet<EmployeeTerritories>();
-            Orders = new HashSet<Orders>();
+            EmployeeTerritories = new List<EmployeeTerritories>();
+            Orders = new List<Orders>();
         }
 
         public int EmployeeId { get; set; }
@@ -31,9 +31,9 @@ namespace LinqRunner.Server.DataModel
         public string Title { get; set; }
         public string TitleOfCourtesy { get; set; }
 
-        public virtual ICollection<EmployeeTerritories> EmployeeTerritories { get; set; }
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual List<EmployeeTerritories> EmployeeTerritories { get; set; }
+        public virtual List<Orders> Orders { get; set; }
         public virtual Employees ReportsToNavigation { get; set; }
-        public virtual ICollection<Employees> InverseReportsToNavigation { get; set; }
+        public virtual List<Employees> InverseReportsToNavigation { get; set; }
     }
 }

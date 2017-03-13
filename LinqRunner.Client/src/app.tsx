@@ -25,7 +25,10 @@ interface AppState {
 
 class App extends React.Component<any, AppState>
 {
-    _query: string = 'db.Orders.Select(o => o)';
+    _query: string = 
+`db.Orders
+    .Where(o => o.OrderId > 10200)
+    .Include(o => o.Customer)`;
 
     constructor(props: any) {
         super(props);
@@ -62,8 +65,7 @@ class App extends React.Component<any, AppState>
                     msg.Error = err.response.body.Details;
                 }
                 else if (res.body.result) {
-                    var result = res.body.result.map((o: any) => o) as Array<any>;
-                    msg.Result = result;
+                    msg.Result = res.body.result;
                 }
 
                 $this.setState({

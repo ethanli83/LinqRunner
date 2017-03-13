@@ -42,3 +42,7 @@ div.CodeMirror {
     margin: 0 0 0 0;
     padding: 5px;
 }
+
+.CodeMirror {
+    height: auto !important;
+}

@@ -28,3 +28,20 @@
 	/*color: #339;*/
 	background: darkslategray;
 }
+
+.tabs .tab a.active {
+  	color: white;
+}
+
+.tabs .tab a:hover {
+  	color: white;
+}
+
+.tabs .tab a {
+  	color: white;
+	text-transform: none;
+}
+
+.tabs .indicator {
+	background-color: white;
+}

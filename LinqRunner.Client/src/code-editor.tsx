@@ -95,21 +95,13 @@ export default class CodeEditor extends React.Component<CodeEditorProps, any>
     }
 
     render() {
-        const containerStyle: React.CSSProperties = {
-            ...this.props.style,
-            display: 'flex',
-            flexFlow: 'column'
-        };
-
         const codeMirrorStyle: React.CSSProperties = {
             flexGrow: 1,
-            flexBasis: 0
+            flexBasis: 0,
+            overflow: 'scroll'
         };
 
-        const ButtonStyle: React.CSSProperties = {
-            flexGrow: 0
-        };
-
-        return <div style={codeMirrorStyle} ref={d => this._editorElement = d}></div>;
+        return <div className={this.props.className}
+                    style={{ ...this.props.style, ...codeMirrorStyle}} ref={d => this._editorElement = d}></div>;
     }
 }

@@ -6,7 +6,7 @@ namespace LinqRunner.Server.DataModel
     {
         public Products()
         {
-            OrderDetails = new HashSet<OrderDetails>();
+            OrderDetails = new List<OrderDetails>();
         }
 
         public int ProductId { get; set; }
@@ -20,7 +20,7 @@ namespace LinqRunner.Server.DataModel
         public short? UnitsInStock { get; set; }
         public short? UnitsOnOrder { get; set; }
 
-        public virtual ICollection<OrderDetails> OrderDetails { get; set; }
+        public virtual List<OrderDetails> OrderDetails { get; set; }
         public virtual Categories Category { get; set; }
         public virtual Suppliers Supplier { get; set; }
     }

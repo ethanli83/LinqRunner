@@ -6,8 +6,8 @@ namespace LinqRunner.Server.DataModel
     {
         public Customers()
         {
-            CustomerCustomerDemo = new HashSet<CustomerCustomerDemo>();
-            Orders = new HashSet<Orders>();
+            CustomerCustomerDemo = new List<CustomerCustomerDemo>();
+            Orders = new List<Orders>();
         }
 
         public string CustomerId { get; set; }
@@ -22,7 +22,7 @@ namespace LinqRunner.Server.DataModel
         public string PostalCode { get; set; }
         public string Region { get; set; }
 
-        public virtual ICollection<CustomerCustomerDemo> CustomerCustomerDemo { get; set; }
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual List<CustomerCustomerDemo> CustomerCustomerDemo { get; set; }
+        public virtual List<Orders> Orders { get; set; }
     }
 }

@@ -6,14 +6,14 @@ namespace LinqRunner.Server.DataModel
     {
         public Territories()
         {
-            EmployeeTerritories = new HashSet<EmployeeTerritories>();
+            EmployeeTerritories = new List<EmployeeTerritories>();
         }
 
         public string TerritoryId { get; set; }
         public int RegionId { get; set; }
         public string TerritoryDescription { get; set; }
 
-        public virtual ICollection<EmployeeTerritories> EmployeeTerritories { get; set; }
+        public virtual List<EmployeeTerritories> EmployeeTerritories { get; set; }
         public virtual Region Region { get; set; }
     }
 }

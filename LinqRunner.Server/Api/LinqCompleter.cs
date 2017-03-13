@@ -27,11 +27,13 @@ namespace LinqRunner.Server.Api
 
             //Add reference to mscorlib
             var linqlib = typeof(Queryable).GetTypeInfo().Assembly;
+            var eftlib = typeof(EntityFrameworkQueryableExtensions).GetTypeInfo().Assembly;
 
-            _defaultReferences = new[] {linqlib};
+            _defaultReferences = new[] { linqlib, eftlib };
 
             //Add namespaces
             _scriptOptions = _scriptOptions.AddImports("System.Linq");
+            _scriptOptions = _scriptOptions.AddImports("Microsoft.EntityFrameworkCore");
         }
 
         public async Task<List<Completion>> GetSuggestions<T>(
@@ -88,6 +90,7 @@ namespace LinqRunner.Server.Api
             {
                 if (symbol?.ContainingAssembly?.Name != null &&
                     !symbol.ContainingAssembly.Name.StartsWith("System.Linq") &&
+                    !symbol.ContainingAssembly.Name.StartsWith("Microsoft.EntityFrameworkCore") &&
                     symbol?.ContainingNamespace?.Name != null &&
                     symbol.ContainingAssembly.Name + "." + symbol.ContainingNamespace.Name != dbType.Namespace)
                     continue;

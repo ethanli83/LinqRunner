@@ -6,13 +6,13 @@ namespace LinqRunner.Server.DataModel
     {
         public Shippers()
         {
-            Orders = new HashSet<Orders>();
+            Orders = new List<Orders>();
         }
 
         public int ShipperId { get; set; }
         public string CompanyName { get; set; }
         public string Phone { get; set; }
 
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual List<Orders> Orders { get; set; }
     }
 }

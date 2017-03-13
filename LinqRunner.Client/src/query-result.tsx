@@ -4,7 +4,7 @@ require('!style-loader!css-loader!./css/query-result.css');
 
 interface QueryResultProps extends React.HTMLProps<HTMLDivElement>
 {
-    Result?: Array<any>,
+    Result?: any,
     Running?: boolean,
     Error?: string
 }
@@ -14,6 +14,14 @@ export default class QueryResult extends React.Component<QueryResultProps, any>
     constructor(props: QueryResultProps) 
     {
         super();
+    }
+
+    componentDidUpdate()
+    {
+        if (!this.props.Running && this.props.Result)
+        {
+            ($('ul.tabs') as any).tabs();
+        }
     }
 
     render() 
@@ -41,29 +49,55 @@ export default class QueryResult extends React.Component<QueryResultProps, any>
         }
         else
         {
-            var heads = Object
-                .keys(this.props.Result[0])
-                .map((p, pi) => {
-                    return <th key={pi}>{p}</th>
+            var keys = Object.keys(this.props.Result);
+            var tabHeaders = keys
+                .map((tableName: string, ti: number) => {
+                    return (
+                        <li className="tab teal lighten-2" key={ti}>
+                            <a href={'#result_table_' + ti}>{ tableName }</a>
+                        </li>
+                    );
                 });
 
-            var rows = this.props.Result
-                .map((r, ri)=> {
-                    var items = Object.keys(r).map((k, ki )=> <td key={ki}>{r[k]}</td>);
-                    return <tr key={ri}>{items}</tr>;
+            var tabs = keys
+                .map((tableName: string, ti: number) => {
+                    var result = this.props.Result[tableName];
+                    
+                    var heads = Object
+                        .keys(result[0])
+                        .map((p, pi) => {
+                            return <th key={pi}>{p}</th>
+                        });
+
+                    var rows = result
+                        .map((r: any, ri: number)=> {
+                            var items = Object.keys(r).map((k, ki )=> <td key={ki}>{r[k]}</td>);
+                            return <tr key={ri}>{items}</tr>;
+                        });
+
+                    return (
+                        <div id={'result_table_' + ti} key={ti} style={{ width: '100%', overflow: 'auto', flexGrow: 1 }}>
+                            <table className={'result-table'} style={{ width: '100%' }}>
+                                <thead><tr>{heads}</tr></thead>
+                                <tbody>{rows}</tbody>
+                            </table>
+                        </div>);
                 });
 
             table = (
-                <table className={'result-table'}>
-                    <thead><tr>{heads}</tr></thead>
-                    <tbody>{rows}</tbody>
-                </table>
+                <div style={{ width: '100%', display: 'flex', flexFlow: 'column' }}>
+                    <div style={{ width: '100%', flexGrow: 0 }} className="teal lighten-2">
+                        <ul className="tabs teal lighten-2">
+                            {tabHeaders}
+                        </ul>
+                    </div>
+                    {tabs}
+                </div>
             );
         }
 
         var style: React.CSSProperties = { 
             ...this.props.style,
-            overflow: 'auto',
             display: 'flex',
             justifyContent: 'center'
         };

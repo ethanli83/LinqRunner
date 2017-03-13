@@ -6,7 +6,7 @@ namespace LinqRunner.Server.DataModel
     {
         public Categories()
         {
-            Products = new HashSet<Products>();
+            Products = new List<Products>();
         }
 
         public int CategoryId { get; set; }
@@ -14,6 +14,6 @@ namespace LinqRunner.Server.DataModel
         public string Description { get; set; }
         public byte[] Picture { get; set; }
 
-        public virtual ICollection<Products> Products { get; set; }
+        public virtual List<Products> Products { get; set; }
     }
 }

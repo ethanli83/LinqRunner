@@ -9,13 +9,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "github": "^8.1.0"
+    "github": "^8.1.0",
+    "react-tab-panel": "^2.2.7",
+    "react-tabs": "^0.8.2"
   },
   "devDependencies": {
     "@types/codemirror": "0.0.35",
     "@types/github": "0.0.0",
+    "@types/jquery": "^2.0.41",
     "@types/react": "^0.14.57",
     "@types/react-dom": "^0.14.19",
+    "@types/react-tabs": "^0.5.22",
     "@types/superagent": "^2.0.36",
     "awesome-typescript-loader": "v3.0.0-beta.9",
     "babel-core": "^6.21.0",

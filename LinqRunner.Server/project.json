@@ -1,13 +1,14 @@
 ﻿{
     "version": "1.0.0-*",
     "buildOptions": {
+        "debugType": "portable",
         "emitEntryPoint": true,
         "preserveCompilationContext": true
     },
     "dependencies": {
         "Dapper": "1.50.2",
-        "EFSqlTranslator.Translation": "1.0.0-alpha6",
-        "EFSqlTranslator.EFModels": "1.0.0-alpha6",
+        "EFSqlTranslator.Translation": "1.2.1",
+        "EFSqlTranslator.EFModels": "1.1.0",
         "Microsoft.AspNetCore.Owin": "1.1.0",
         "Microsoft.AspNetCore.Routing": "1.1.0",
         "Microsoft.AspNetCore.Server.IISIntegration": "1.1.0",

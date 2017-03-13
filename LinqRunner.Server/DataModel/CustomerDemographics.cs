@@ -6,12 +6,12 @@ namespace LinqRunner.Server.DataModel
     {
         public CustomerDemographics()
         {
-            CustomerCustomerDemo = new HashSet<CustomerCustomerDemo>();
+            CustomerCustomerDemo = new List<CustomerCustomerDemo>();
         }
 
         public string CustomerTypeId { get; set; }
         public string CustomerDesc { get; set; }
 
-        public virtual ICollection<CustomerCustomerDemo> CustomerCustomerDemo { get; set; }
+        public virtual List<CustomerCustomerDemo> CustomerCustomerDemo { get; set; }
     }
 }
