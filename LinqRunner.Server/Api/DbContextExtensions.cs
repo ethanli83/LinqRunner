@@ -6,6 +6,7 @@ using EFSqlTranslator.EFModels;
 using EFSqlTranslator.Translation;
 using EFSqlTranslator.Translation.DbObjects;
 using EFSqlTranslator.Translation.DbObjects.MySqlObjects;
+using EFSqlTranslator.Translation.Extensions;
 using EFSqlTranslator.Translation.MethodTranslators;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,7 +26,7 @@ namespace LinqRunner.Server.Api
                 try
                 {
                     IncludeGraph graph;
-                    var script = LinqTranslator.Translate(
+                    var script = QueryTranslator.Translate(
                         query.Expression, new EFModelInfoProvider(db), new MySqlObjectFactory(), out graph);
 
                     foreach (var statement in script.Scripts)
