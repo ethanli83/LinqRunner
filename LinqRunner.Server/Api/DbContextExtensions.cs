@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Dapper;
@@ -38,8 +39,16 @@ namespace LinqRunner.Server.Api
                         {
                             var node = graph.ScriptToNodes[statement];
                             var entityType = node.Expression.GetReturnBaseType();
-                            var data = connection.Query(entityType, cSql);
-                            results[entityType.Name] = data;
+
+                            if (entityType.Name.StartsWith("<>") || entityType.Name.StartsWith("VB$"))
+                            {
+                                var result = connection.Query(cSql);
+                                results[entityType.Name] = new DynamicDataConvertor(entityType).Convert(result);
+                            }
+                            else
+                            {
+                                results[entityType.Name] = connection.Query(entityType, cSql);
+                            }
                         }
                         else
                         {
@@ -52,10 +61,31 @@ namespace LinqRunner.Server.Api
                 catch (Exception e)
                 {
                     Console.WriteLine("NOT WORKING!!");
+                    Console.WriteLine(sql);
                     Console.WriteLine(e);
 
                     throw;
                 }
+            }
+        }
+
+        public static Dictionary<string, IEnumerable<object>> Load<T>(this DbContext db, IQueryable<T> query, out string sql)
+        {
+            var results = new Dictionary<string, IEnumerable<object>>();
+            sql = string.Empty;
+
+            try
+            {
+                var data = db.Query(query, new EFModelInfoProvider(db), new MySqlObjectFactory(), out sql);
+                return results;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("NOT WORKING!!");
+                Console.WriteLine(sql);
+                Console.WriteLine(e);
+
+                throw;
             }
         }
     }
